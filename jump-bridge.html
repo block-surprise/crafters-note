@@ -182,19 +182,27 @@ footer a:visited {
       aside {
         width: 100%;
       }
-      .share-buttons {
+.share-buttons {
   margin-top: 1rem;
 }
+
 .share-buttons a {
   display: inline-block;
   margin-right: 1rem;
-  font-size: 1.4rem;
+  font-size: 1.8rem; /* ← 少し大きめに */
   color: #2a4d69;
+  text-decoration: none;
   transition: opacity 0.2s;
 }
+
 .share-buttons a:hover {
   opacity: 0.6;
 }
+
+.share-buttons a:visited {
+  color: #2a4d69; /* ← クリック後も色が変わらないように */
+}
+
 #after-summary {
   margin-top: 3rem;
   padding-top: 2rem;
