@@ -11,7 +11,274 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
   <style>
-    
+       body {
+      font-family: "Noto Sans JP", sans-serif;
+      background: #fdfaf6;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #2a4d69;
+      color: #fff;
+      padding: 1.5rem 1rem;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .site-title h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    .site-title p {
+      margin: 0.3rem 0 0;
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      gap: 2rem;
+    }
+    main {
+      flex: 1 1 700px;
+    }
+    aside {
+      flex: 0 0 280px;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 2rem;
+    }
+    nav.toc {
+      background: #fff;
+      border-left: 4px solid #2a4d69;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      border-radius: 6px;
+    }
+    nav.toc h2 {
+      font-size: 1rem;
+      margin-top: 0;
+      color: #2a4d69;
+    }
+    nav.toc ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    nav.toc li {
+      margin: 0.4rem 0;
+    }
+    nav.toc a {
+      color: #2a4d69;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    nav.toc a:hover {
+      text-decoration: underline;
+    }
+
+    h2 {
+      color: #2a4d69;
+      margin-top: 2rem;
+    }
+    p {
+      line-height: 1.8;
+    }
+    ol, ul {
+      padding-left: 1.2rem;
+    }
+    code {
+      background: #eee;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      margin: 1.5rem 0;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 6px;
+    }
+
+    aside h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #2a4d69;
+    }
+    .sidebar-section {
+      margin-bottom: 2rem;
+    }
+    .sidebar-section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .sidebar-section li {
+      margin-bottom: 0.6rem;
+    }
+    .sidebar-section a {
+      color: #2a4d69;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .sidebar-section a:hover {
+      text-decoration: underline;
+    }
+    .ad-placeholder {
+      background: #eee;
+      padding: 1rem;
+      text-align: center;
+      border-radius: 6px;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      margin-top: 4rem;
+      font-size: 0.85rem;
+      color: #666;
+      text-align: center;
+      background: #f0f0f0;
+      padding: 2rem;
+    }
+footer a {
+  color: #2a4d69;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+footer a:visited {
+  color: #2a4d69; /* ← 通常と同じ色にする */
+}
+.share-buttons {
+  margin-top: 1rem;
+}
+
+.share-buttons a {
+  display: inline-block;
+  margin-right: 1rem;
+  font-size: 1.8rem; /* ← 少し大きめに */
+  color: #2a4d69;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.share-buttons a:hover {
+  opacity: 0.6;
+}
+
+.share-buttons a:visited {
+  color: #2a4d69; /* ← クリック後も色が変わらないように */
+}
+
+#after-summary {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #ddd;
+}
+#after-summary h2 {
+  color: #2a4d69;
+  margin-top: 1.5rem;
+}
+#after-summary ul {
+  list-style: none;
+  padding-left: 0;
+}
+#after-summary li {
+  margin-bottom: 0.6rem;
+}
+#after-summary a {
+  color: #2a4d69;
+  text-decoration: none;
+}
+#after-summary a:hover {
+  text-decoration: underline;
+}
+    .article-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.card {
+  display: block;
+  width: calc(33.333% - 1rem);
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #2a4d69;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  color: #2a4d69;
+}
+
+.card-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+    @media (max-width: 768px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .container {
+        flex-direction: column;
+      }
+      aside {
+        width: 100%;
+      }
+  .card {
+    width: 100%;
+  }
+    }
   </style>
 <body>
   <header>
