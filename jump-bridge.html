@@ -213,6 +213,52 @@ footer a:visited {
 #after-summary a:hover {
   text-decoration: underline;
 }
+    .article-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.card {
+  display: block;
+  width: calc(33.333% - 1rem);
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #2a4d69;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  color: #2a4d69;
+}
+
+.card-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
     @media (max-width: 768px) {
       .header-inner {
         flex-direction: column;
@@ -225,7 +271,9 @@ footer a:visited {
       aside {
         width: 100%;
       }
-
+  .card {
+    width: 100%;
+  }
     }
   </style>
 </head>
@@ -320,12 +368,31 @@ footer a:visited {
       </section>
 <section id="after-summary">
   <h2>次に読みたい記事</h2>
-  <ul>
-    <li><a href="sneak-bridge.html">スニークブリッジのやり方</a></li>
-    <li><a href="bridge-tips.html">橋を速く作るための5つのコツ</a></li>
-    <li><a href="skywars-start.html">SkyWarsで勝つための立ち回り</a></li>
-  </ul>
+  <div class="article-cards">
+    <a href="sneak-bridge.html" class="card">
+      <img src="images/sneak-bridge-thumb.jpg" alt="スニークブリッジのサムネイル">
+      <div class="card-content">
+        <h3>スニークブリッジのやり方</h3>
+        <p>初心者でもできる、安定した橋の作り方を解説！</p>
+      </div>
+    </a>
+    <a href="bridge-tips.html" class="card">
+      <img src="images/bridge-tips-thumb.jpg" alt="橋を速く作るコツのサムネイル">
+      <div class="card-content">
+        <h3>橋を速く作るための5つのコツ</h3>
+        <p>スピード重視の建築テクをまとめて紹介！</p>
+      </div>
+    </a>
+    <a href="skywars-start.html" class="card">
+      <img src="images/skywars-thumb.jpg" alt="SkyWarsの立ち回りサムネイル">
+      <div class="card-content">
+        <h3>SkyWarsで勝つための立ち回り</h3>
+        <p>初動・装備・戦術まで、勝利への道を徹底解説！</p>
+      </div>
+    </a>
+  </div>
 </section>
+
 
 <section id="share">
   <h2>この記事をシェア</h2>
