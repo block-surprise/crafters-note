@@ -16,17 +16,34 @@
     header {
       background: #2a4d69;
       color: #fff;
-      padding: 1.5rem;
-      text-align: center;
+      padding: 1.5rem 1rem;
     }
-    header h1 {
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .site-title h1 {
       margin: 0;
       font-size: 2rem;
     }
-    header p {
+    .site-title p {
       margin: 0.3rem 0 0;
       font-size: 1rem;
       opacity: 0.8;
+    }
+    .search-box {
+      margin-top: 0.5rem;
+    }
+    .search-box input[type="search"] {
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
+      width: 240px;
     }
     .container {
       display: flex;
@@ -41,14 +58,6 @@
     }
     aside {
       flex: 0 0 280px;
-    }
-    input[type="search"] {
-      width: 100%;
-      padding: 0.8rem;
-      font-size: 1rem;
-      margin-bottom: 2rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
     }
     .post-list {
       display: flex;
@@ -135,6 +144,11 @@
       margin-top: 3rem;
     }
     @media (max-width: 768px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
       .container {
         flex-direction: column;
       }
@@ -145,19 +159,27 @@
         width: 100%;
         height: auto;
       }
+      aside {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>クラフターズノート</h1>
-    <p>ものづくりの記録をまとめる記事サイト</p>
+    <div class="header-inner">
+      <div class="site-title">
+        <h1>クラフターズノート</h1>
+        <p>ものづくりの記録をまとめる記事サイト</p>
+      </div>
+      <div class="search-box">
+        <input type="search" id="searchInput" placeholder="記事を検索...">
+      </div>
+    </div>
   </header>
 
   <div class="container">
     <main>
-      <input type="search" id="searchInput" placeholder="記事を検索...">
-
       <section class="post-list" id="postList">
         <article class="post-item">
           <a href="posts/surge.html" class="post-thumb">
