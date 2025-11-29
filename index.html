@@ -4,40 +4,57 @@
   <meta charset="UTF-8">
   <title>クラフターズノート | ホーム</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="クラフターズノートは、ものづくりの記録ややり方を静かに綴る記事サイトです。">
+  <meta name="description" content="クラフターズノートは、ものづくりの記録ややり方をまとめる記事サイトです。">
   <style>
     body {
-      font-family: "Noto Serif JP", serif;
-      background: #fdfaf6;
+      font-family: "Noto Sans JP", sans-serif;
+      background: #f9f9f9;
       color: #333;
       margin: 0;
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    header h1 {
-      font-size: 2rem;
-      color: #2a4d69;
-    }
-    .post-list {
-      list-style: none;
       padding: 0;
     }
-    .post-list li {
-      margin-bottom: 2rem;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 1rem;
+    header {
+      background: #2a4d69;
+      color: #fff;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    header p {
+      margin: 0.3rem 0 0;
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .post-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .post-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 1.2rem;
+      transition: transform 0.2s ease;
+    }
+    .post-card:hover {
+      transform: translateY(-3px);
     }
     .post-date {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #888;
+      margin-bottom: 0.5rem;
     }
     .post-title {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: bold;
       color: #2a4d69;
       text-decoration: none;
@@ -46,41 +63,45 @@
       text-decoration: underline;
     }
     .post-desc {
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: #555;
-      margin-top: 0.3rem;
+      margin-top: 0.5rem;
     }
     footer {
-      margin-top: 4rem;
+      text-align: center;
+      padding: 2rem;
       font-size: 0.85rem;
       color: #666;
-      text-align: center;
+      background: #f0f0f0;
+      margin-top: 3rem;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>クラフターズノート</h1>
-    <p>ものづくりの記録を静かに綴る場所</p>
+    <p>ものづくりの記録をまとめる記事サイト</p>
   </header>
 
-  <ul class="post-list">
-    <li>
-      <div class="post-date">2025年11月29日</div>
-      <a href="posts/surge.html" class="post-title">SURGEの使い方</a>
-      <div class="post-desc">API連携とセキュリティ設計を、詩的なUIに落とし込む手順。</div>
-    </li>
-    <li>
-      <div class="post-date">2025年11月22日</div>
-      <a href="posts/poetic-ui.html" class="post-title">詩的UIの設計手順</a>
-      <div class="post-desc">余白と静けさを守りながら、美しい体験を形にする方法。</div>
-    </li>
-    <li>
-      <div class="post-date">2025年11月15日</div>
-      <a href="posts/editing.html" class="post-title">編集という詩</a>
-      <div class="post-desc">動画編集の中で見つけた、リズムと間合いの物語。</div>
-    </li>
-  </ul>
+  <main>
+    <div class="post-list">
+      <div class="post-card">
+        <div class="post-date">2025年11月29日</div>
+        <a href="posts/surge.html" class="post-title">SURGEの使い方</a>
+        <div class="post-desc">API連携とセキュリティ設計を、実際のコード例とともに解説。</div>
+      </div>
+      <div class="post-card">
+        <div class="post-date">2025年11月22日</div>
+        <a href="posts/ui-design.html" class="post-title">UIデザインの基本</a>
+        <div class="post-desc">余白や配色の考え方を整理し、使いやすさと美しさを両立する方法。</div>
+      </div>
+      <div class="post-card">
+        <div class="post-date">2025年11月15日</div>
+        <a href="posts/editing.html" class="post-title">動画編集の工夫</a>
+        <div class="post-desc">編集の流れを整理し、効率的に仕上げるための小さなテクニック。</div>
+      </div>
+    </div>
+  </main>
 
   <footer>
     <p>© 2025 クラフターズノート</p>
