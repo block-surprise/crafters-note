@@ -21,17 +21,26 @@
     }
     header h1 {
       margin: 0;
-      font-size: 1.8rem;
+      font-size: 2rem;
     }
     header p {
       margin: 0.3rem 0 0;
       font-size: 1rem;
       opacity: 0.8;
     }
-    main {
-      max-width: 900px;
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
       margin: 2rem auto;
       padding: 0 1rem;
+      gap: 2rem;
+    }
+    main {
+      flex: 1 1 600px;
+    }
+    aside {
+      flex: 0 0 280px;
     }
     input[type="search"] {
       width: 100%;
@@ -85,6 +94,38 @@
       color: #555;
       margin-top: 0.5rem;
     }
+    aside h2 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #2a4d69;
+    }
+    .popular-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .popular-item {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+    }
+    .popular-item img {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .popular-item a {
+      font-size: 0.95rem;
+      color: #2a4d69;
+      text-decoration: none;
+    }
+    .popular-item a:hover {
+      text-decoration: underline;
+    }
     footer {
       text-align: center;
       padding: 2rem;
@@ -92,6 +133,18 @@
       color: #666;
       background: #f0f0f0;
       margin-top: 3rem;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .post-item {
+        flex-direction: column;
+      }
+      .post-thumb img {
+        width: 100%;
+        height: auto;
+      }
     }
   </style>
 </head>
@@ -101,44 +154,53 @@
     <p>ものづくりの記録をまとめる記事サイト</p>
   </header>
 
-  <main>
-    <input type="search" id="searchInput" placeholder="記事を検索...">
+  <div class="container">
+    <main>
+      <input type="search" id="searchInput" placeholder="記事を検索...">
 
-    <section class="post-list" id="postList">
-      <article class="post-item">
-        <a href="posts/surge.html" class="post-thumb">
-          <img src="thumbs/surge.png" alt="SURGEの使い方">
-        </a>
-        <div class="post-content">
-          <div class="post-meta">2025年11月29日・開発ノート</div>
-          <h2 class="post-title"><a href="posts/surge.html">SURGEの使い方</a></h2>
-          <p class="post-desc">API連携とセキュリティ設計を、実際のコード例とともに解説。</p>
-        </div>
-      </article>
+      <section class="post-list" id="postList">
+        <article class="post-item">
+          <a href="posts/surge.html" class="post-thumb">
+            <img src="thumbs/surge.png" alt="SURGEの使い方">
+          </a>
+          <div class="post-content">
+            <div class="post-meta">2025年11月29日・開発ノート</div>
+            <h2 class="post-title"><a href="posts/surge.html">SURGEの使い方</a></h2>
+            <p class="post-desc">API連携とセキュリティ設計を、実際のコード例とともに解説。</p>
+          </div>
+        </article>
 
-      <article class="post-item">
-        <a href="posts/ui-design.html" class="post-thumb">
-          <img src="thumbs/ui.png" alt="UIデザインの基本">
-        </a>
-        <div class="post-content">
-          <div class="post-meta">2025年11月22日・デザイン</div>
-          <h2 class="post-title"><a href="posts/ui-design.html">UIデザインの基本</a></h2>
-          <p class="post-desc">余白や配色の考え方を整理し、使いやすさと美しさを両立する方法。</p>
-        </div>
-      </article>
+        <article class="post-item">
+          <a href="posts/ui-design.html" class="post-thumb">
+            <img src="thumbs/ui.png" alt="UIデザインの基本">
+          </a>
+          <div class="post-content">
+            <div class="post-meta">2025年11月22日・デザイン</div>
+            <h2 class="post-title"><a href="posts/ui-design.html">UIデザインの基本</a></h2>
+            <p class="post-desc">余白や配色の考え方を整理し、使いやすさと美しさを両立する方法。</p>
+          </div>
+        </article>
+      </section>
+    </main>
 
-      <article class="post-item">
-        <a href="posts/editing.html" class="post-thumb">
-          <img src="thumbs/editing.png" alt="動画編集の工夫">
-        </a>
-        <div class="post-content">
-          <div class="post-meta">2025年11月15日・編集ノート</div>
-          <h2 class="post-title"><a href="posts/editing.html">動画編集の工夫</a></h2>
-          <p class="post-desc">編集の流れを整理し、効率的に仕上げるための小さなテクニック。</p>
-        </div>
-      </article>
-    </section>
-  </main>
+    <aside>
+      <h2>人気の記事</h2>
+      <ul class="popular-list">
+        <li class="popular-item">
+          <a href="posts/ui-design.html">
+            <img src="thumbs/ui.png" alt="UIデザイン">
+          </a>
+          <a href="posts/ui-design.html">UIデザインの基本</a>
+        </li>
+        <li class="popular-item">
+          <a href="posts/surge.html">
+            <img src="thumbs/surge.png" alt="SURGEの使い方">
+          </a>
+          <a href="posts/surge.html">SURGEの使い方</a>
+        </li>
+      </ul>
+    </aside>
+  </div>
 
   <footer>
     <p>© 2025 クラフターズノート</p>
@@ -165,4 +227,3 @@
   </script>
 </body>
 </html>
-
