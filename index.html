@@ -33,33 +33,51 @@
       margin: 2rem auto;
       padding: 0 1rem;
     }
-    .post-list {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
+    input[type="search"] {
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
     }
-    .post-card {
+    .post-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .post-item {
+      display: flex;
+      gap: 1.5rem;
       background: #fff;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      padding: 1.2rem;
-      transition: transform 0.2s ease;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      padding: 1rem;
+      align-items: flex-start;
     }
-    .post-card:hover {
-      transform: translateY(-3px);
+    .post-thumb img {
+      width: 160px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 6px;
     }
-    .post-date {
+    .post-content {
+      flex: 1;
+    }
+    .post-meta {
       font-size: 0.85rem;
       color: #888;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
     }
     .post-title {
+      margin: 0;
       font-size: 1.2rem;
-      font-weight: bold;
+    }
+    .post-title a {
       color: #2a4d69;
       text-decoration: none;
     }
-    .post-title:hover {
+    .post-title a:hover {
       text-decoration: underline;
     }
     .post-desc {
@@ -84,28 +102,67 @@
   </header>
 
   <main>
-    <div class="post-list">
-      <div class="post-card">
-        <div class="post-date">2025年11月29日</div>
-        <a href="posts/surge.html" class="post-title">SURGEの使い方</a>
-        <div class="post-desc">API連携とセキュリティ設計を、実際のコード例とともに解説。</div>
-      </div>
-      <div class="post-card">
-        <div class="post-date">2025年11月22日</div>
-        <a href="posts/ui-design.html" class="post-title">UIデザインの基本</a>
-        <div class="post-desc">余白や配色の考え方を整理し、使いやすさと美しさを両立する方法。</div>
-      </div>
-      <div class="post-card">
-        <div class="post-date">2025年11月15日</div>
-        <a href="posts/editing.html" class="post-title">動画編集の工夫</a>
-        <div class="post-desc">編集の流れを整理し、効率的に仕上げるための小さなテクニック。</div>
-      </div>
-    </div>
+    <input type="search" id="searchInput" placeholder="記事を検索...">
+
+    <section class="post-list" id="postList">
+      <article class="post-item">
+        <a href="posts/surge.html" class="post-thumb">
+          <img src="thumbs/surge.png" alt="SURGEの使い方">
+        </a>
+        <div class="post-content">
+          <div class="post-meta">2025年11月29日・開発ノート</div>
+          <h2 class="post-title"><a href="posts/surge.html">SURGEの使い方</a></h2>
+          <p class="post-desc">API連携とセキュリティ設計を、実際のコード例とともに解説。</p>
+        </div>
+      </article>
+
+      <article class="post-item">
+        <a href="posts/ui-design.html" class="post-thumb">
+          <img src="thumbs/ui.png" alt="UIデザインの基本">
+        </a>
+        <div class="post-content">
+          <div class="post-meta">2025年11月22日・デザイン</div>
+          <h2 class="post-title"><a href="posts/ui-design.html">UIデザインの基本</a></h2>
+          <p class="post-desc">余白や配色の考え方を整理し、使いやすさと美しさを両立する方法。</p>
+        </div>
+      </article>
+
+      <article class="post-item">
+        <a href="posts/editing.html" class="post-thumb">
+          <img src="thumbs/editing.png" alt="動画編集の工夫">
+        </a>
+        <div class="post-content">
+          <div class="post-meta">2025年11月15日・編集ノート</div>
+          <h2 class="post-title"><a href="posts/editing.html">動画編集の工夫</a></h2>
+          <p class="post-desc">編集の流れを整理し、効率的に仕上げるための小さなテクニック。</p>
+        </div>
+      </article>
+    </section>
   </main>
 
   <footer>
     <p>© 2025 クラフターズノート</p>
     <p><a href="https://blocksurprise.f5.si">ブロックサプライズ公式サイトへ戻る</a></p>
   </footer>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const postList = document.getElementById('postList');
+    const posts = postList.querySelectorAll('.post-item');
+
+    searchInput.addEventListener('input', () => {
+      const keyword = searchInput.value.toLowerCase();
+      posts.forEach(post => {
+        const title = post.querySelector('.post-title').textContent.toLowerCase();
+        const desc = post.querySelector('.post-desc').textContent.toLowerCase();
+        if (title.includes(keyword) || desc.includes(keyword)) {
+          post.style.display = 'flex';
+        } else {
+          post.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
+
