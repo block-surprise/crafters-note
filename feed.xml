@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>クラフターズノート</title>
+    <link>https://crafters.blocksurprise.f5.si/</link>
+    <description>ものづくりの記録をまとめる記事サイト</description>
+
+    <item>
+      <title>マイクラにMicrosoftアカウントでログインする方法</title>
+      <link>https://crafters.blocksurprise.f5.si/minecraft-login-guide</link>
+      <pubDate>Sat, 29 Nov 2025 15:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>橋を速く作るための5つのコツ</title>
+      <link>https://crafters.blocksurprise.f5.si/hashi-speed-tips</link>
+      <pubDate>Fri, 28 Nov 2025 18:30:00 +0900</pubDate>
+    </item>
+  </channel>
+</rss>
