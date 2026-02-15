@@ -35,5 +35,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>  
+
+     <url>
+    <loc>https://crafters.blocksurprise.f5.si/deepslate-aesthetics</loc>
+    <lastmod>2025-2-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>  
   
 </urlset>
