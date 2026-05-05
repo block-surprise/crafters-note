@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>【重要】セキュリティ強化（HTTPS化）のお知らせ | クラフターズノート</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body { font-family: "Noto Sans JP", sans-serif; background: #fdfdfd; color: #333; line-height: 1.8; margin: 0; }
+    header { background: #2a4d69; color: #fff; padding: 1.2rem; text-align: center; font-weight: bold; }
+    .container { max-width: 750px; margin: 2rem auto; padding: 2.5rem; background: #fff; border: 1px solid #eee; border-radius: 10px; }
+    .back-link { display: inline-block; margin-bottom: 1.5rem; color: #2a4d69; text-decoration: none; font-size: 0.9rem; }
+    .date { color: #999; font-size: 0.9rem; }
+    h1 { font-size: 1.6rem; color: #2a4d69; margin: 0.5rem 0 2rem 0; border-bottom: 3px solid #22c55e; padding-bottom: 0.8rem; }
+    
+    .security-status { background: #f0fff4; border: 1px solid #c6f6d5; border-radius: 8px; padding: 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1.5rem; }
+    .security-status i { font-size: 3rem; color: #38a169; }
+    .status-text h2 { margin: 0; font-size: 1.15rem; color: #2f855a; }
+    
+    .info-section { margin: 2.5rem 0; }
+    .info-section h3 { font-size: 1.2rem; color: #2a4d69; border-left: 4px solid #2a4d69; padding-left: 0.8rem; margin-bottom: 1rem; }
+    
+    .notice-box { background: #fffaf0; border: 1px solid #feebc8; padding: 1rem; border-radius: 6px; font-size: 0.9rem; }
+    
+    footer { text-align: center; padding: 2rem; color: #bbb; font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+
+<header>クラフターズノート - NEWS</header>
+
+<div class="container">
+  <a href="/news/index.html" class="back-link"><i class="fas fa-chevron-left"></i> お知らせ一覧へ戻る</a>
+  
+  <div class="date">2026.04.17</div>
+  <h1>クラフターズノートのセキュルティーを強化しました。</h1>
+
+  <div class="security-status">
+    <i class="fas fa-shield-alt"></i>
+    <div class="status-text">
+      <h2>常時HTTPS化が完了しました</h2>
+      <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem;">通信内容が暗号化され、より安全にサイトをご利用いただけます。</p>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h3>HTTPS化（SSL導入）とは？</h3>
+    <p>
+      サイトと閲覧者の間の通信を暗号化する技術です。これにより、第三者によるデータの盗聴や改ざんを防ぐことができます。
+      一時的に接続が不安定になっていた問題も解決し、現在はすべてのページで「保護された通信」が行われています。
+    </p>
+  </div>
+
+  <div class="info-section">
+    <h3>ブックマークについて</h3>
+    <p>
+      従来の <code>http://</code> で始まるURLからアクセスした場合でも、自動的に安全な <code>https://</code> へ転送（リダイレクト）されます。
+      特にお客様側での設定変更は不要ですが、可能であれば新しいURLでの再登録をおすすめいたします。
+    </p>
+  </div>
+
+  <div class="notice-box">
+    <strong>💡 ご確認ください</strong><br>
+    ブラウザのURL欄に「鍵マーク」が表示されていれば、安全に接続されています。
+  </div>
+
+  <p style="margin-top: 2.5rem; text-align: center;">
+    <a href="/" style="color: #2a4d69; font-weight: bold; text-decoration: none;">
+      <i class="fas fa-home"></i> ホームへ戻る
+    </a>
+  </p>
+</div>
+
+<footer>
+  © 2026 Crafters Note
+</footer>
+
+</body>
+</html>
