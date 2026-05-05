@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>鉄の巨像を制す：上級者のためのアイアンゴーレム制圧術 | クラフターズノート</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="マインクラフト統合版対応。ブロックを積まずにアイアンゴーレムを倒す、ボートハメや溶岩、リーチ管理を駆使した上級テクニックを徹底解説。">
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3571574988222927" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0GD81F1VCB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0GD81F1VCB');
+  </script>
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="鉄の巨像を制す：上級者のためのアイアンゴーレム制圧術">
+  <meta property="og:url" content="https://crafters.blocksurprise.f5.si/iron-golem-tactics">
+  <meta property="og:image" content="https://crafters.blocksurprise.f5.si/golem-thumb.png">
+  <meta property="og:site_name" content="クラフターズノート">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="/css/style-default.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon2.png">
+
+  <style>
+    body { font-family: "Noto Sans JP", sans-serif; background: #fdfaf6; color: #333; margin: 0; padding: 0; }
+    header { background: #2a4d69 !important; color: #fff; padding: 1.5rem 1rem; }
+    .header-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .site-title h1 { margin: 0; font-size: 1.8rem; }
+    .site-title h1 a { color: inherit; text-decoration: none; }
+    .container { display: flex; flex-wrap: wrap; max-width: 1200px; margin: 2rem auto; padding: 0 1rem; gap: 2rem; }
+    main { flex: 1 1 700px; }
+    aside { flex: 0 0 280px; }
+    .meta { font-size: 0.9rem; color: #888; margin-bottom: 2rem; }
+    nav.toc { background: #fff; border-left: 4px solid #2a4d69; padding: 1rem; margin-bottom: 2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.05); border-radius: 6px; }
+    h2 { color: #2a4d69; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; margin-top: 3rem; }
+    h3 { color: #2a4d69; margin-top: 2rem; border-left: 4px solid #2a4d69; padding-left: 0.8rem; }
+    p { line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; }
+    .highlight { background: linear-gradient(transparent 70%, #f9d4d4 70%); font-weight: bold; }
+    .point-box { background: #fff; border: 1px solid #2a4d69; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+    .point-box h4 { margin-top: 0; color: #2a4d69; }
+    .material-list { background: #f0f0f0; padding: 1.5rem; border-radius: 8px; list-style-type: none; }
+    .material-list li { margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; }
+    .material-list li:last-child { border-bottom: none; }
+    .material-list strong { color: #d63031; display: block; font-size: 1.1rem; }
+    
+    .article-cards { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1rem; }
+    .card { display: block; width: calc(33.333% - 1rem); background: #fff; border-radius: 8px; overflow: hidden; text-decoration: none; color: #2a4d69; box-shadow: 0 2px 6px rgba(0,0,0,0.05); transition: 0.2s; }
+    .card img { width: 100%; height: auto; display: block; }
+    .card-content { padding: 1rem; }
+    
+    footer { margin-top: 4rem; padding: 2rem; background: #f0f0f0; text-align: center; }
+    @media (max-width: 768px) { .container { flex-direction: column; } aside { width: 100%; } .card { width: 100%; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="site-title">
+      <h1><a href="https://crafters.blocksurprise.f5.si/">クラフターズノート</a></h1>
+      <p>ものづくりの記録をまとめる記事サイト</p>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <main>
+    <h2>鉄の巨像を制す：上級者のためのアイアンゴーレム制圧術</h2>
+    <div class="meta">2026年5月5日・サバイバル・戦闘技術・統合版対応</div>
+
+    <p>
+      村の守護者、アイアンゴーレム。HP100（ハート50個分）という圧倒的なタフさと、装備なしでは即死もあり得る攻撃力を持つ。初心者は土ブロックを3段積んで安全圏を作るが、上級者は環境と仕様を武器にする。
+    </p>
+
+    <nav class="toc">
+      <h2>目次</h2>
+      <ul>
+        <li><a href="#section1">1. 環境を利用した4つのハメ技</a></li>
+        <li><a href="#section2">2. 「3.5ブロック」の距離感とステップ</a></li>
+        <li><a href="#section3">3. 村人の信頼度（好感度）メカニズム</a></li>
+        <li><a href="#section4">4. 応用：トラップ効率を上げる「即時処理」</a></li>
+        <li><a href="#summary">5. まとめ ― 知識は剣よりも強し</a></li>
+      </ul>
+    </nav>
+
+    <section id="section1">
+      <h2>1. 環境を利用した4つのハメ技</h2>
+      <ul class="material-list">
+        <li><strong>ボートによる物理拘束：</strong>
+          ゴーレムの当たり判定は大きい。移動経路上にボートを置くだけで、巨体を小さな座席に固定できる。一度乗れば攻撃判定も消失するため、素手でも安全に解体が可能だ。</li>
+        <li><strong>溶岩バケツによる「事故死」偽装：</strong>
+          足元に溶岩を設置し、火がついたら回収する。これを繰り返すことで、村人からのヘイトを買わずに鉄を入手できる。</li>
+        <li><strong>リードを用いた高所吊り下げ：</strong>
+          フェンスにリードで繋ぐことで、一定範囲内に動きを封じ込める。そのまま足元のブロックを壊せば、落下ダメージでの大幅削りも狙える。</li>
+        <li><strong>リーチ差を利用したアンダーアタック：</strong>
+          自身が1ブロック分低い位置から攻撃することで、ゴーレムの「跳ね上げ攻撃」の射程から外れつつ、一方的に足を叩くことができる。</li>
+      </ul>
+    </section>
+
+    <section id="section2">
+      <h2>2. 「3.5ブロック」の距離感とステップ</h2>
+      <p>
+        統合版において、ゴーレムの攻撃射程は約<span class="highlight">3.5ブロック</span>と言われている。これはプレイヤーの攻撃射程（約3ブロック）よりもわずかに長い。
+      </p>
+      <div class="point-box">
+        <h4>上級者のバックステップ技術</h4>
+        <p>1. 攻撃の瞬間に前進し、ヒットした瞬間に後退（Sキー/スティック後ろ）を入れる。<br>
+           2. 攻撃を受けそうになったら「ジャンプ」を合わせる。これによりノックバックの勢いで射程外へ逃げやすくなる（ノックバックキャンセル）。</p>
+      </div>
+      <p>
+        ジャンプの落下タイミングで攻撃を当てる「クリティカル」は必須だ。通常攻撃よりも少ない手数で倒せるため、武器の耐久値の節約にも繋がる。
+      </p>
+    </section>
+
+    <section id="section3">
+      <h2>3. 村人の信頼度（好感度）メカニズム</h2>
+      <p>
+        村の経済を守るためには、信頼度（Popularity）の管理が欠かせない。直接攻撃でゴーレムを倒すと、その村での好感度が下がり、取引価格が跳ね上がる。
+      </p>
+      <p>
+        このペナルティを避けるには、前述の「溶岩」のほか、火打ち石での着火、サボテン、あるいは高い場所からの落下など、<span class="highlight">「環境要因」</span>でとどめを刺すのがプロの鉄則だ。
+      </p>
+    </section>
+
+    <section id="section4">
+      <h2>4. 応用：トラップ効率を上げる「即時処理」</h2>
+      <p>
+        アイアンゴーレムトラップにおいて、ゴーレムが生き残っている時間は「次のスポーン」を阻害する。上級者は湧き層から処理層への移動を最短にし、かつ「焚き火」や「溶岩」で瞬時にHPを削る設計を行う。
+      </p>
+      <p>
+        特に統合版では、村の判定（ベッドの数や村人の職業）がシビアなため、処理効率がそのまま時給換算の鉄の量に直結する。
+      </p>
+    </section>
+
+    <section id="summary">
+      <h2>5. まとめ ― 知識は剣よりも強し</h2>
+      <p>
+        アイアンゴーレムは強敵だが、その挙動を理解すれば「ただの鉄の塊」に過ぎない。ブロックを積む手を止め、環境を操り、ステップで翻弄する。そんなスマートな戦闘スタイルをぜひ試してほしい。
+      </p>
+    </section>
+
+    <section id="after-summary" style="margin-top: 4rem; border-top: 1px solid #ddd; padding-top: 2rem;">
+      <h2>次に読みたい記事</h2>
+      <div class="article-cards">
+        <a href="powder-snow-elevator" class="card">
+          <img src="elevator-main.png" alt="透明エレベーター">
+          <div class="card-content">
+            <h3>粉雪の魔術：透明エレベーター</h3>
+            <p>囲いなしで水を空中に固定する最新技術</p>
+          </div>
+        </a>
+        <a href="jump-bridge" class="card">
+          <img src="jump-bridge-demo.png" alt="ジャンプブリッジ">
+          <div class="card-content">
+            <h3>ジャンプブリッジのやり方</h3>
+            <p>統合版限定の高速建築テクニック</p>
+          </div>
+        </a>
+        <a href="deepslate-aesthetics" class="card">
+          <img src="deepslate-boundary.png" alt="深層岩の底で">
+          <div class="card-content">
+            <h3>深層岩の底で──静寂の記録</h3>
+            <p>最深部で見つけた闇と美学の探求</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <aside>
+    <div class="sidebar-section">
+      <h3>人気の記事</h3>
+      <ul>
+        <li><a href="powder-snow-elevator">透明エレベーターの作り方</a></li>
+        <li><a href="jump-bridge">ジャンプブリッジのコツ</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <h3>著者について</h3>
+      <p><strong>ブロックサプライズ</strong><br>Web・UI/UXデザイナー。効率化と美しさを両立するマイクラライフを提案。</p>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <p>© 2026 クラフターズノート</p>
+  <p><a href="https://crafters.blocksurprise.f5.si/">← 記事一覧に戻る</a></p>
+</footer>
+
+</body>
+</html>
