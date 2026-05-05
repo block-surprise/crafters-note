@@ -6,72 +6,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body { font-family: "Noto Sans JP", sans-serif; background: #f9f9f9; color: #333; line-height: 1.8; margin: 0; }
-    header { background: #2a4d69; color: #fff; padding: 1rem; text-align: center; }
-    .container { max-width: 800px; margin: 2rem auto; padding: 2rem; background: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-    .update-meta { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
-    h1 { font-size: 1.6rem; color: #2a4d69; border-bottom: 2px solid #2a4d69; padding-bottom: 0.5rem; }
-    h2 { font-size: 1.3rem; margin-top: 2rem; color: #2a4d69; display: flex; align-items: center; gap: 0.5rem; }
-    .change-log { background: #f0f4f8; padding: 1.5rem; border-radius: 6px; margin: 1rem 0; }
-    .change-log ul { padding-left: 1.2rem; }
-    .before-after { display: flex; gap: 1rem; margin: 1.5rem 0; }
-    .box { flex: 1; padding: 1rem; border-radius: 6px; font-size: 0.9rem; }
-    .before { background: #fee2e2; border-left: 4px solid #ef4444; }
-    .after { background: #dcfce7; border-left: 4px solid #22c55e; }
-    .btn { display: inline-block; background: #2a4d69; color: #fff; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 4px; margin-top: 2rem; transition: 0.3s; }
-    .btn:hover { background: #1a3d59; transform: translateY(-2px); }
-    footer { text-align: center; margin-top: 3rem; padding: 2rem; color: #888; }
+    body { font-family: "Noto Sans JP", sans-serif; background: #fdfaf6; color: #333; line-height: 1.8; margin: 0; }
+    header { background: #2a4d69; color: #fff; padding: 1.2rem; text-align: center; font-weight: bold; }
+    .container { max-width: 750px; margin: 2rem auto; padding: 2.5rem; background: #fff; border: 1px solid #eee; border-radius: 10px; }
+    .back-link { display: inline-block; margin-bottom: 1.5rem; color: #2a4d69; text-decoration: none; font-size: 0.9rem; }
+    .date { color: #999; font-size: 0.9rem; }
+    h1 { font-size: 1.6rem; color: #2a4d69; margin: 0.5rem 0 2rem 0; border-bottom: 3px solid #d63031; padding-bottom: 0.8rem; }
+    
+    .update-box { background: #fff5f5; border-radius: 8px; padding: 1.5rem; margin: 2rem 0; border: 1px solid #f9d4d4; }
+    .update-box h2 { font-size: 1.2rem; color: #d63031; margin-top: 0; display: flex; align-items: center; gap: 0.5rem; }
+    
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    .grid-item { background: #fff; padding: 1rem; border: 1px solid #f1f1f1; border-radius: 6px; }
+    .grid-item strong { color: #d63031; display: block; margin-bottom: 0.3rem; }
+
+    .action-btn { 
+      display: block; 
+      width: fit-content; 
+      margin: 3rem auto 1rem; 
+      padding: 1rem 2.5rem; 
+      background: #d63031; 
+      color: #fff; 
+      text-decoration: none; 
+      border-radius: 50px; 
+      font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 15px rgba(214, 48, 49, 0.3);
+    }
+    footer { text-align: center; padding: 2rem; color: #bbb; font-size: 0.8rem; }
+    @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
 
-<header>
-  <div style="max-width: 800px; margin: 0 auto; text-align: left;">
-    <a href="/" style="color: #fff; text-decoration: none; font-size: 0.9rem;"><i class="fas fa-arrow-left"></i> ホームへ戻る</a>
-  </div>
-</header>
+<header>クラフターズノート - NEWS</header>
 
 <div class="container">
-  <div class="update-meta">公開日：2026年5月5日</div>
-  <h1>【Update】アイアンゴーレム攻略記事を大幅改訂しました</h1>
+  <a href="/news/index.html" class="back-link"><i class="fas fa-chevron-left"></i> お知らせ一覧へ戻る</a>
+  
+  <div class="date">2026.05.05</div>
+  <h1>アイアンゴーレム攻略記事をプロ仕様にアップデートしました！</h1>
 
-  <p>いつも「クラフターズノート」を読んでいただきありがとうございます。本日、公開中の「アイアンゴーレム攻略講座」の内容を、より実戦的で「上級者向け」の内容にアップデートしました。</p>
+  <p>主力記事の一つである「アイアンゴーレム倒し方講座」を大幅にリニューアルしました。ブロックを積んで逃げるだけの戦い方を卒業し、仕様を逆手に取った「制圧術」をまとめています。</p>
 
-  <h2><i class="fas fa-tools"></i> 主な変更点</h2>
-  <div class="change-log">
-    <ul>
-      <li><strong>リーチ管理の数値化：</strong> 「3.5ブロック」という具体的な射程距離の解説を追加。</li>
-      <li><strong>ノックバックキャンセルの解説：</strong> ダメージを最小限に抑えるジャンプ操作を追記。</li>
-      <li><strong>村人好感度メカニズム：</strong> 取引価格を下げないための「環境ダメージ」での倒し方を詳しく解説。</li>
-      <li><strong>デザイン改修：</strong> 重要なポイントを視覚的に分かりやすく「ポイントボックス」化。</li>
-    </ul>
-  </div>
-
-  <h2><i class="fas fa-exchange-alt"></i> 内容の比較</h2>
-  <div class="before-after">
-    <div class="box before">
-      <strong>これまでの内容</strong><br>
-      ・基本的なブロックの積み方<br>
-      ・簡単な倒し方の紹介<br>
-      ・初心者向けのガイド
-    </div>
-    <div class="box after">
-      <strong>アップデート後</strong><br>
-      ・物理法則（リーチ）を利用した戦術<br>
-      ・ハメ技のバリエーション増加<br>
-      ・トラップ効率化への応用
+  <div class="update-box">
+    <h2><i class="fas fa-bolt"></i> 今回の改訂ポイント</h2>
+    <div class="grid">
+      <div class="grid-item">
+        <strong>ハメ技4種の深掘り</strong>
+        ボート拘束や溶岩バケツによる「事故死偽装」など、実践的なハメ技を再整理。
+      </div>
+      <div class="grid-item">
+        <strong>リーチ管理の解説</strong>
+        統合版の射程3.5ブロックを制する、精密なバックステップ技術を追記。
+      </div>
+      <div class="grid-item">
+        <strong>信頼度メカニズム</strong>
+        村の取引価格を下げないための「Popularity（好感度）」管理について詳しく解説。
+      </div>
+      <div class="grid-item">
+        <strong>最新Ver.の挙動反映</strong>
+        現在の統合版におけるノックバックや攻撃判定の仕様に基づき内容を最新化。
+      </div>
     </div>
   </div>
 
-  <p>今回のアップデートにより、ただ「倒せる」だけでなく、マインクラフトの仕様を深く理解して「スマートに制圧する」ための知識が得られるようになっています。</p>
+  <p>
+    「知識は剣よりも強し」──。単なる力押しではない、環境と仕様を武器にしたスマートな立ち回りをぜひチェックしてみてください。
+  </p>
 
-  <div style="text-align: center;">
-    <a href="002.html" class="btn">新しくなった記事を読む <i class="fas fa-chevron-right"></i></a>
-  </div>
+  <a href="../002.html" class="action-btn">
+    新しくなった「鉄の巨像制圧術」を読む <i class="fas fa-chevron-right"></i>
+  </a>
+
 </div>
 
 <footer>
-  © 2026 クラフターズノート Update Log
+  © 2026 Crafters Note
 </footer>
 
 </body>
