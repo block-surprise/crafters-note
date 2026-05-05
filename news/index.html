@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>お知らせ一覧 | クラフターズノート</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body { font-family: "Noto Sans JP", sans-serif; background: #f9f9f9; color: #333; margin: 0; }
+    header { background: #2a4d69; color: #fff; padding: 1.5rem 1rem; }
+    .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+    h1 { color: #2a4d69; font-size: 1.5rem; border-left: 5px solid #2a4d69; padding-left: 1rem; margin-bottom: 2rem; }
+    .news-card { background: #fff; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); padding: 0.5rem 1rem; }
+    .news-list-item { list-style: none; padding: 1.2rem 0; border-bottom: 1px dashed #ddd; display: flex; align-items: center; gap: 1rem; }
+    .news-list-item:last-child { border-bottom: none; }
+    .news-date { font-size: 0.9rem; color: #888; white-space: nowrap; }
+    .news-badge { font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 3px; color: #fff; font-weight: bold; }
+    .news-title a { color: #2a4d69; text-decoration: none; font-weight: 500; }
+    .news-title a:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 2rem; color: #888; font-size: 0.85rem; }
+    .back-home { margin-bottom: 1rem; display: inline-block; color: #2a4d69; text-decoration: none; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div style="max-width: 800px; margin: 0 auto;">
+    <div style="font-size: 1.5rem; font-weight: bold;">クラフターズノート</div>
+  </div>
+</header>
+
+<div class="container">
+  <a href="../index.html" class="back-home"><i class="fas fa-chevron-left"></i> ホームへ戻る</a>
+  <h1>お知らせ一覧</h1>
+
+  <div class="news-card">
+    <ul style="padding: 0; margin: 0;">
+      <!-- お知らせ項目：ここを増やしていく -->
+      <li class="news-list-item">
+        <span class="news-date">2026.05.05</span>
+        <span class="news-badge" style="background: #d63031;">NEW</span>
+        <div class="news-title">
+          <a href="update-golem.html">アイアンゴーレム攻略記事をプロ仕様にアップデートしました！</a>
+        </div>
+      </li>
+      <li class="news-list-item">
+        <span class="news-date">2026.05.01</span>
+        <span class="news-badge" style="background: #2a4d69;">INFO</span>
+        <div class="news-title">
+          <a href="#">サイトの表示速度を改善するメンテナンスを実施しました。</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  © 2026 クラフターズノート
+</footer>
+
+</body>
+</html>
