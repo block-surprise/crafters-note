@@ -196,7 +196,7 @@
       margin-top: 3rem;
     }
 
-    /* 広告用レスポンシブ設定 */
+
     @media (max-width: 768px) {
       .header-inner {
         flex-direction: column;
@@ -216,13 +216,13 @@
       aside {
         width: 100%;
       }
-      /* スマホでは広告枠と余白を完全に消す */
+ 
       #ad-sidebar-wrapper {
         display: none !important;
         margin: 0 !important;
       }
     }
-    /* 広告画像を枠内に収める */
+ 
 .ad-image {
   max-width: 100%;
   height: auto;
@@ -230,11 +230,97 @@
   margin: 0 auto;
 }
 
-/* スマホの時、[PR]の文字を小さくしたり調整する場合 */
+
 @media (max-width: 768px) {
   .ad-item h2 {
     font-size: 0.8rem;
     margin-bottom: 5px;
+  }
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+.post-title, .post-desc {
+  word-break: break-word;
+}
+
+@media (max-width: 768px) {
+
+  .container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  aside {
+    flex: none;
+    width: 100%;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .search-box input[type="search"] {
+    width: 100%;
+  }
+
+  .post-item {
+    flex-direction: column;
+    padding: 0.9rem;
+  }
+
+  .post-thumb img {
+    width: 100%;
+    height: auto;
+  }
+
+  .news-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  .popular-item {
+    align-items: center;
+  }
+
+
+  .ad-item img {
+    width: 100%;
+    height: auto;
+  }
+
+
+  #ad-sidebar-wrapper {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  aside {
+    flex: 0 0 220px;
+  }
+
+  .post-thumb img {
+    width: 140px;
+    height: 90px;
   }
 }
   </style>
@@ -443,7 +529,7 @@
   <script>
     const searchInput = document.getElementById('searchInput');
     const postList = document.getElementById('postList');
-    const posts = postList.querySelectorAll('.post-item');
+  const posts = postList.querySelectorAll('.post-item:not(.ad-item)');
 
     searchInput.addEventListener('input', () => {
       const keyword = searchInput.value.toLowerCase();
