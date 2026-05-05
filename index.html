@@ -222,6 +222,21 @@
         margin: 0 !important;
       }
     }
+    /* 広告画像を枠内に収める */
+.ad-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* スマホの時、[PR]の文字を小さくしたり調整する場合 */
+@media (max-width: 768px) {
+  .ad-item h2 {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+}
   </style>
 </head>
 <body>
