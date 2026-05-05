@@ -455,29 +455,34 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-      <!-- 広告ランダム表示セクション -->
-<div class="sidebar-section" style="margin-bottom: 2.5rem; text-align: center;">
+
+<div id="ad-sidebar-wrapper" class="sidebar-section" style="margin-bottom: 2.5rem; text-align: center;">
   <p style="font-size: 0.7rem; color: #999; margin-bottom: 5px;">SPONSORED</p>
-  <div id="random-ad-container">
-    <!-- ここにJavaScriptで広告が挿入されます -->
-  </div>
+  <div id="random-ad-container"></div>
 </div>
+
+<style>
+
+  @media (max-width: 768px) {
+    #ad-sidebar-wrapper {
+      display: none;
+    }
+  }
+</style>
 
 <script>
   (function() {
-    // 4つの広告コードを配列に格納
-    const ads = [
-      '<a href="//af.moshimo.com/af/c/click?a_id=5295483&p_id=4936&pc_id=13170&pl_id=68068" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/1762/000000068068.gif" width="160" height="600" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5295483&p_id=4936&pc_id=13170&pl_id=68068" width="1" height="1" style="border:none;" loading="lazy">',
-      '<a href="//af.moshimo.com/af/c/click?a_id=5295269&p_id=2540&pc_id=5631&pl_id=33135" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/1762/000000033135.png" width="160" height="600" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5295269&p_id=2540&pc_id=5631&pl_id=33135" width="1" height="1" style="border:none;" loading="lazy">',
-      '<a href="//af.moshimo.com/af/c/click?a_id=5295269&p_id=2540&pc_id=5631&pl_id=33137" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/1762/000000033137.png" width="160" height="600" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5295269&p_id=2540&pc_id=5631&pl_id=33137" width="1" height="1" style="border:none;" loading="lazy">',
-      '<a href="//af.moshimo.com/af/c/click?a_id=5295426&p_id=1079&pc_id=1563&pl_id=16209" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/0343/000000016209.gif" width="160" height="600" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5295426&p_id=1079&pc_id=1563&pl_id=16209" width="1" height="1" style="border:none;" loading="lazy">'
-    ];
 
-    // 0から3までの乱数を生成
-    const randomIndex = Math.floor(Math.random() * ads.length);
-
-    // 指定したコンテナに広告を表示
-    document.getElementById('random-ad-container').innerHTML = ads[randomIndex];
+    if (window.innerWidth > 768) {
+      const ads = [
+        '<a href="//af.moshimo.com/af/c/click?a_id=5295483&p_id=4936&pc_id=13170&pl_id=68068" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/1762/000000068068.gif" width="160" height="600" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5295483&p_id=4936&pc_id=13170&pl_id=68068" width="1" height="1" style="border:none;" loading="lazy">',
+        '<a href="//af.moshimo.com/af/c/click?a_id=5295269&p_id=2540&pc_id=5631&pl_id=33135" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/1762/000000033135.png" width="160" height="600" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5295269&p_id=2540&pc_id=5631&pl_id=33135" width="1" height="1" style="border:none;" loading="lazy">',
+        '<a href="//af.moshimo.com/af/c/click?a_id=5295269&p_id=2540&pc_id=5631&pl_id=33137" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/1762/000000033137.png" width="160" height="600" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5295269&p_id=2540&pc_id=5631&pl_id=33137" width="1" height="1" style="border:none;" loading="lazy">',
+        '<a href="//af.moshimo.com/af/c/click?a_id=5295426&p_id=1079&pc_id=1563&pl_id=16209" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/0343/000000016209.gif" width="160" height="600" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5295426&p_id=1079&pc_id=1563&pl_id=16209" width="1" height="1" style="border:none;" loading="lazy">'
+      ];
+      const randomIndex = Math.floor(Math.random() * ads.length);
+      document.getElementById('random-ad-container').innerHTML = ads[randomIndex];
+    }
   })();
 </script>
     </aside>
