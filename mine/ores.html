@@ -7,11 +7,18 @@
 <title>鉱石ガイド | Minecraft攻略ベース</title>
 
 <style>
+
+*{
+    box-sizing:border-box;
+}
+
 body{
     margin:0;
     font-family:Arial,sans-serif;
     background:#f5f5f5;
 }
+
+/* ヘッダー */
 
 header{
     background:#607d8b;
@@ -20,15 +27,99 @@ header{
     padding:40px;
 }
 
-.container{
-    width:90%;
-    max-width:1000px;
-    margin:30px auto;
+header h1{
+    margin:0;
 }
+
+/* ナビゲーション */
+
+.navbar{
+    background:#455a64;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    padding:15px 20px;
+}
+
+.navbar a:hover{
+    background:#37474f;
+}
+
+/* 検索 */
+
+.search-box{
+    text-align:center;
+    padding:20px;
+}
+
+.search-box input{
+    width:350px;
+    max-width:90%;
+    padding:12px;
+    font-size:16px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+/* レイアウト */
+
+.layout{
+    display:flex;
+    max-width:1400px;
+    margin:auto;
+}
+
+/* サイドバー */
+
+.sidebar{
+    width:250px;
+    background:white;
+    padding:20px;
+    margin:30px 20px;
+    border-radius:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    height:fit-content;
+}
+
+.sidebar h3{
+    margin-top:0;
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar li{
+    margin:12px 0;
+}
+
+.sidebar a{
+    text-decoration:none;
+    color:#333;
+}
+
+.sidebar a:hover{
+    color:#607d8b;
+}
+
+/* メイン */
+
+.container{
+    flex:1;
+    margin:30px 20px 30px 0;
+}
+
+/* カード */
 
 .card{
     background:white;
-    padding:20px;
+    padding:25px;
     margin-bottom:20px;
     border-radius:15px;
     box-shadow:0 2px 10px rgba(0,0,0,.1);
@@ -42,17 +133,52 @@ header{
     display:inline-block;
     background:#607d8b;
     color:white;
-    padding:5px 10px;
+    padding:6px 12px;
     border-radius:20px;
     font-size:14px;
+    margin-bottom:10px;
 }
 
 .tip{
     background:#eceff1;
     border-left:5px solid #607d8b;
-    padding:10px;
-    margin-top:10px;
+    padding:12px;
+    margin-top:15px;
 }
+
+.detail-btn{
+    display:inline-block;
+    margin-top:15px;
+    background:#607d8b;
+    color:white;
+    text-decoration:none;
+    padding:10px 15px;
+    border-radius:8px;
+}
+
+.detail-btn:hover{
+    background:#455a64;
+}
+
+/* スマホ */
+
+@media(max-width:900px){
+
+.layout{
+    flex-direction:column;
+}
+
+.sidebar{
+    width:auto;
+    margin:20px;
+}
+
+.container{
+    margin:20px;
+}
+
+}
+
 </style>
 </head>
 
@@ -60,75 +186,367 @@ header{
 
 <header>
 <h1>⛏️ 鉱石ガイド</h1>
-<p>主要な鉱石の使い道と特徴を解説</p>
+<p>Minecraft攻略ベースの鉱石完全ガイド</p>
 </header>
 
-<div class="container">
+<nav class="navbar">
+<a href="index.html">🏠 ホーム</a>
+<a href="beginner.html">🌱 初心者ガイド</a>
+<a href="mobs.html">👾 モブ図鑑</a>
+<a href="enchant.html">⚔ エンチャント</a>
+<a href="builds.html">🏗️ 建築集</a>
+<a href="ores.html">⛏️ 鉱石ガイド</a>
+</nav>
 
-<div class="card">
+<div class="search-box">
+<input
+type="text"
+id="search"
+placeholder="鉱石名を検索..."
+onkeyup="searchOre()">
+</div>
+
+<div class="layout">
+
+<!-- サイドバー -->
+
+<aside class="sidebar">
+
+<h3>📚 鉱石一覧</h3>
+
+<ul>
+<li><a href="#coal">🪨 石炭</a></li>
+<li><a href="#iron">🩶 鉄</a></li>
+<li><a href="#copper">🟧 銅</a></li>
+<li><a href="#gold">🟨 金</a></li>
+<li><a href="#redstone">🟥 レッドストーン</a></li>
+<li><a href="#lapis">🟦 ラピスラズリ</a></li>
+<li><a href="#diamond">💎 ダイヤモンド</a></li>
+<li><a href="#emerald">🟩 エメラルド</a></li>
+<li><a href="#netherite">⬛ ネザライト</a></li>
+</ul>
+
+</aside>
+
+<!-- メイン -->
+
+<main class="container">
+
+<div class="card" id="coal">
+
 <h2>🪨 石炭</h2>
+
 <span class="rarity">よく見つかる</span>
-<p>かまどの燃料や松明作りに使う。</p>
+
+<p>
+石炭はマイクラで最初にお世話になる鉱石です。
+主に松明や燃料として利用されます。
+</p>
+
+<p><strong>発見しやすさ：</strong>★★★★★</p>
+<p><strong>おすすめ度：</strong>★★★★★</p>
+
+<ul>
+<li>松明作成</li>
+<li>かまどの燃料</li>
+<li>キャンプファイヤー作成</li>
+</ul>
+
 <div class="tip">
-序盤に大量に集めておくと便利。
-</div>
+💡 洞窟探索では大量に必要になるため、
+見つけたら採掘しておきましょう。
 </div>
 
-<div class="card">
+<a href="ore-coal.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<div class="card" id="iron">
+
 <h2>🩶 鉄</h2>
+
 <span class="rarity">重要</span>
-<p>鉄装備、バケツ、レールなど多くのアイテムに必要。</p>
+
+<p>
+鉄はサバイバルで最重要クラスの鉱石です。
+装備や道具の性能を大きく向上させます。
+</p>
+
+<p><strong>発見しやすさ：</strong>★★★★☆</p>
+<p><strong>おすすめ度：</strong>★★★★★</p>
+
+<ul>
+<li>鉄装備</li>
+<li>鉄ツール</li>
+<li>バケツ</li>
+<li>レール</li>
+<li>金床</li>
+</ul>
+
 <div class="tip">
-まずは鉄装備一式を目標にしよう。
-</div>
+💡 鉄が30個以上集まると
+ゲームがかなり楽になります。
 </div>
 
-<div class="card">
-<h2>🟥 レッドストーン</h2>
-<span class="rarity">回路用</span>
-<p>自動ドアや自動農場などの装置に使う。</p>
-<div class="tip">
-回路作りを始めるなら必須。
-</div>
+<a href="ore-iron.html" class="detail-btn">
+詳細を見る →
+</a>
+
 </div>
 
-<div class="card">
-<h2>💎 ダイヤモンド</h2>
-<span class="rarity">レア</span>
-<p>強力な装備やエンチャント台の作成に必要。</p>
+<div class="card" id="copper">
+
+<h2>🟧 銅</h2>
+
+<span class="rarity">建築向け</span>
+
+<p>
+銅は比較的新しい鉱石です。
+建築や特殊アイテムに利用されます。
+</p>
+
+<p><strong>発見しやすさ：</strong>★★★★★</p>
+<p><strong>おすすめ度：</strong>★★★☆☆</p>
+
+<ul>
+<li>避雷針</li>
+<li>望遠鏡</li>
+<li>建築ブロック</li>
+</ul>
+
 <div class="tip">
-見つけたら慎重に掘ろう。
-</div>
+💡 時間経過で色が変化するため
+建築勢に人気です。
 </div>
 
-<div class="card">
-<h2>🟦 ラピスラズリ</h2>
-<span class="rarity">エンチャント用</span>
-<p>エンチャントを付ける際に消費する。</p>
-<div class="tip">
-意外と不足しやすいので集めておこう。
-</div>
+<a href="ore-copper.html" class="detail-btn">
+詳細を見る →
+</a>
+
 </div>
 
-<div class="card">
+<div class="card" id="gold">
+
 <h2>🟨 金</h2>
+
 <span class="rarity">特殊用途</span>
-<p>パワードレールや金のリンゴの素材。</p>
+
+<p>
+金は耐久力こそ低いですが、
+様々な重要アイテムの素材になります。
+</p>
+
+<p><strong>発見しやすさ：</strong>★★★☆☆</p>
+<p><strong>おすすめ度：</strong>★★★★☆</p>
+
+<ul>
+<li>金のリンゴ</li>
+<li>パワードレール</li>
+<li>ネザー交易</li>
+<li>金装備</li>
+</ul>
+
 <div class="tip">
-ネザー探索では金装備が役立つ。
-</div>
+💡 ネザーでは金装備を1つ装備すると
+ピグリンが敵対しません。
 </div>
 
-<div class="card">
+<a href="ore-gold.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+    <div class="card" id="redstone">
+
+<h2>🟥 レッドストーン</h2>
+
+<span class="rarity">回路用</span>
+
+<p>
+レッドストーンは自動装置や回路作りに必須の鉱石です。
+初心者には難しく感じますが、慣れると非常に便利です。
+</p>
+
+<p><strong>発見しやすさ：</strong>★★★☆☆</p>
+<p><strong>おすすめ度：</strong>★★★★☆</p>
+
+<ul>
+<li>自動ドア</li>
+<li>自動農場</li>
+<li>仕分け機</li>
+<li>隠し部屋</li>
+</ul>
+
+<div class="tip">
+💡 レッドストーン回路を覚えるとサバイバルがさらに楽しくなります。
+</div>
+
+<a href="ore-redstone.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<div class="card" id="lapis">
+
+<h2>🟦 ラピスラズリ</h2>
+
+<span class="rarity">エンチャント用</span>
+
+<p>
+ラピスラズリはエンチャントに必要な鉱石です。
+ダイヤほど目立ちませんが非常に重要です。
+</p>
+
+<p><strong>発見しやすさ：</strong>★★★☆☆</p>
+<p><strong>おすすめ度：</strong>★★★★★</p>
+
+<ul>
+<li>エンチャント</li>
+<li>染料</li>
+<li>装飾ブロック</li>
+</ul>
+
+<div class="tip">
+💡 エンチャントを始める前に大量に集めておきましょう。
+</div>
+
+<a href="ore-lapis.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<div class="card" id="diamond">
+
+<h2>💎 ダイヤモンド</h2>
+
+<span class="rarity">超重要</span>
+
+<p>
+マイクラを代表する鉱石。
+強力な装備やエンチャント台の素材になります。
+</p>
+
+<p><strong>発見しやすさ：</strong>★★☆☆☆</p>
+<p><strong>おすすめ度：</strong>★★★★★</p>
+
+<ul>
+<li>ダイヤ装備</li>
+<li>エンチャント台</li>
+<li>ジュークボックス</li>
+<li>ネザライト装備の土台</li>
+</ul>
+
+<div class="tip">
+💡 ダイヤを見つけたら周囲の溶岩に注意して採掘しましょう。
+</div>
+
+<a href="ore-diamond.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<div class="card" id="emerald">
+
+<h2>🟩 エメラルド</h2>
+
+<span class="rarity">交易用</span>
+
+<p>
+村人との交易で使う通貨のような鉱石です。
+山岳バイオームで見つかります。
+</p>
+
+<p><strong>発見しやすさ：</strong>★☆☆☆☆</p>
+<p><strong>おすすめ度：</strong>★★★★☆</p>
+
+<ul>
+<li>村人交易</li>
+<li>便利アイテム購入</li>
+<li>エンチャント本入手</li>
+</ul>
+
+<div class="tip">
+💡 採掘より交易で集める方が効率的です。
+</div>
+
+<a href="ore-emerald.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<div class="card" id="netherite">
+
 <h2>⬛ ネザライト</h2>
+
 <span class="rarity">最上級</span>
-<p>ダイヤ装備をさらに強化できる。</p>
+
+<p>
+ネザライトは全鉱石の頂点に立つ素材です。
+ダイヤ装備をさらに強化できます。
+</p>
+
+<p><strong>発見しやすさ：</strong>★☆☆☆☆</p>
+<p><strong>おすすめ度：</strong>★★★★★</p>
+
+<ul>
+<li>ネザライト装備</li>
+<li>ネザライトツール</li>
+<li>ノックバック耐性</li>
+<li>溶岩耐性</li>
+</ul>
+
 <div class="tip">
-古代の残骸から作成可能。
-</div>
+💡 古代の残骸を精錬してネザライトインゴットを作ります。
 </div>
 
+<a href="ore-netherite.html" class="detail-btn">
+詳細を見る →
+</a>
+
 </div>
+
+</main>
+
+</div>
+
+<footer style="background:#455a64;color:white;text-align:center;padding:25px;margin-top:30px;">
+<p>© 2026 Minecraft攻略ベース</p>
+<p>初心者から上級者まで役立つ攻略情報を掲載中！</p>
+</footer>
+
+<script>
+
+function searchOre(){
+
+const input =
+document.getElementById("search")
+.value.toLowerCase();
+
+const cards =
+document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+const text =
+card.textContent.toLowerCase();
+
+if(text.includes(input)){
+card.style.display="block";
+}else{
+card.style.display="none";
+}
+
+});
+
+}
+
+</script>
 
 </body>
 </html>
