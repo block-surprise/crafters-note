@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ボス準備チェックツール | Minecraft攻略ベース</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
+}
+
+header{
+    background:#6a1b9a;
+    color:white;
+    text-align:center;
+    padding:40px;
+}
+
+.navbar{
+    background:#4a148c;
+    text-align:center;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    display:inline-block;
+    padding:15px;
+}
+
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:30px auto;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:20px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.task{
+    padding:10px 0;
+    border-bottom:1px solid #eee;
+}
+
+.task label{
+    font-size:18px;
+}
+
+.progress-box{
+    background:#ede7f6;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+}
+
+button{
+    background:#6a1b9a;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#4a148c;
+}
+
+footer{
+    background:#4a148c;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>🐉 ボス準備チェックツール</h1>
+
+<p>Minecraft攻略ベース</p>
+
+</header>
+
+<nav class="navbar">
+
+<a href="index.html">🏠 ホーム</a>
+<a href="tools.html">🧰 便利ツール集</a>
+
+</nav>
+
+<div class="container">
+
+<div class="card">
+
+<h2>準備完了率</h2>
+
+<div class="progress-box" id="progress">
+
+0%
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>🐉 エンダードラゴン討伐準備</h2>
+
+<div class="task"><label><input type="checkbox" class="check"> ダイヤ以上の防具</label></div>
+<div class="task"><label><input type="checkbox" class="check"> ダイヤ以上の剣</label></div>
+<div class="task"><label><input type="checkbox" class="check"> 弓またはクロスボウ</label></div>
+<div class="task"><label><input type="checkbox" class="check"> 矢を十分に用意</label></div>
+<div class="task"><label><input type="checkbox" class="check"> エンダーパール</label></div>
+<div class="task"><label><input type="checkbox" class="check"> 食料64個以上</label></div>
+<div class="task"><label><input type="checkbox" class="check"> 回復ポーション</label></div>
+<div class="task"><label><input type="checkbox" class="check"> 落下対策（水入りバケツ等）</label></div>
+
+</div>
+
+<div class="card">
+
+<h2>💀 ウィザー討伐準備</h2>
+
+<div class="task"><label><input type="checkbox" class="check"> ネザライトまたは高性能装備</label></div>
+<div class="task"><label><input type="checkbox" class="check"> ミルク</label></div>
+<div class="task"><label><input type="checkbox" class="check"> 再生ポーション</label></div>
+<div class="task"><label><input type="checkbox" class="check"> 力のポーション</label></div>
+<div class="task"><label><input type="checkbox" class="check"> 金リンゴ</label></div>
+<div class="task"><label><input type="checkbox" class="check"> 十分なブロック</label></div>
+<div class="task"><label><input type="checkbox" class="check"> 安全な戦闘場所確保</label></div>
+
+</div>
+
+<div class="card">
+
+<button onclick="resetChecklist()">
+
+チェックをリセット
+
+</button>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 Minecraft攻略ベース
+
+</footer>
+
+<script>
+
+const checks =
+document.querySelectorAll(".check");
+
+function updateProgress(){
+
+let checked = 0;
+
+checks.forEach(box=>{
+
+if(box.checked){
+checked++;
+}
+
+});
+
+let percent =
+Math.round(
+(checked / checks.length) * 100
+);
+
+document.getElementById("progress")
+.innerHTML = percent + "%";
+
+localStorage.setItem(
+"bossChecklist",
+JSON.stringify(
+[...checks].map(c=>c.checked)
+)
+);
+
+}
+
+checks.forEach(box=>{
+
+box.addEventListener(
+"change",
+updateProgress
+);
+
+});
+
+window.onload=function(){
+
+let saved =
+JSON.parse(
+localStorage.getItem(
+"bossChecklist"
+)
+);
+
+if(saved){
+
+checks.forEach((box,index)=>{
+
+box.checked =
+saved[index];
+
+});
+
+}
+
+updateProgress();
+
+};
+
+function resetChecklist(){
+
+localStorage.removeItem(
+"bossChecklist"
+);
+
+checks.forEach(box=>{
+
+box.checked=false;
+
+});
+
+updateProgress();
+
+}
+
+</script>
+
+</body>
+</html>
