@@ -7,164 +7,370 @@
 <title>建築アイデア集 | Minecraft攻略ベース</title>
 
 <style>
+
+*{
+box-sizing:border-box;
+}
+
 body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#f5f5f5;
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f5f5;
 }
 
 header{
-    background:#8d6e63;
-    color:white;
-    text-align:center;
-    padding:40px;
+background:#8d6e63;
+color:white;
+text-align:center;
+padding:40px;
 }
 
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:30px auto;
+.navbar{
+background:#6d4c41;
+text-align:center;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+display:inline-block;
+padding:15px;
+}
+
+.navbar a:hover{
+background:#5d4037;
+}
+
+.layout{
+display:flex;
+max-width:1400px;
+margin:auto;
+}
+
+.sidebar{
+width:250px;
+background:white;
+padding:20px;
+box-shadow:2px 0 10px rgba(0,0,0,.1);
+}
+
+.sidebar h3{
+color:#5d4037;
+}
+
+.sidebar a{
+display:block;
+padding:10px;
+margin-bottom:5px;
+text-decoration:none;
+color:#333;
+border-radius:8px;
+}
+
+.sidebar a:hover{
+background:#efebe9;
+}
+
+.main{
+flex:1;
+padding:20px;
+}
+
+.search-box{
+background:white;
+padding:20px;
+border-radius:15px;
+margin-bottom:25px;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.search-box input{
+width:100%;
+padding:15px;
+font-size:16px;
+border:1px solid #ccc;
+border-radius:10px;
+}
+
+.section-title{
+color:#5d4037;
+margin-top:40px;
 }
 
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
 }
 
 .card{
-    background:white;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 2px 10px rgba(0,0,0,.1);
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
 }
 
 .image{
-    height:180px;
-    background:#c8c8c8;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:60px;
+height:180px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:70px;
+color:white;
+}
+
+.house{
+background:linear-gradient(135deg,#4caf50,#81c784);
+}
+
+.modern{
+background:linear-gradient(135deg,#607d8b,#90a4ae);
+}
+
+.mountain{
+background:linear-gradient(135deg,#795548,#a1887f);
+}
+
+.underground{
+background:linear-gradient(135deg,#424242,#757575);
 }
 
 .content{
-    padding:20px;
+padding:20px;
 }
 
 .content h2{
-    margin-top:0;
-    color:#5d4037;
+margin-top:0;
+color:#5d4037;
 }
 
 .tag{
-    display:inline-block;
-    background:#8d6e63;
-    color:white;
-    padding:5px 10px;
-    border-radius:20px;
-    font-size:14px;
-    margin-bottom:10px;
+display:inline-block;
+background:#8d6e63;
+color:white;
+padding:5px 10px;
+border-radius:20px;
+font-size:14px;
+margin-bottom:10px;
+}
+
+details{
+margin-top:10px;
+}
+
+summary{
+cursor:pointer;
+font-weight:bold;
 }
 
 footer{
-    text-align:center;
-    padding:25px;
-    color:#666;
+background:#6d4c41;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:30px;
 }
-</style>
 
+@media(max-width:900px){
+
+.layout{
+flex-direction:column;
+}
+
+.sidebar{
+width:100%;
+}
+
+}
+
+</style>
 </head>
+
 <body>
 
 <header>
+
 <h1>🏗️ 建築アイデア集</h1>
-<p>家づくりや街づくりの参考にしよう！</p>
+
+<p>Minecraft攻略ベース</p>
+
 </header>
 
-<div class="container">
+<nav class="navbar">
+
+<a href="index.html">🏠 ホーム</a>
+<a href="beginner.html">🌱 初心者ガイド</a>
+<a href="ores.html">⛏️ 鉱石ガイド</a>
+<a href="mobs.html">👾 モブ図鑑</a>
+
+</nav>
+
+<div class="layout">
+
+<aside class="sidebar">
+
+<h3>🏗️ 建築カテゴリ</h3>
+
+<a href="#houses">🏠 家</a>
+<a href="#castles">🏰 城</a>
+<a href="#japanese">🌸 和風</a>
+<a href="#practical">🌾 実用建築</a>
+<a href="#fantasy">✨ ファンタジー</a>
+<a href="#city">🏙️ 街づくり</a>
+
+<h3>⭐ 人気建築</h3>
+
+<a href="#">🏡 村風ハウス</a>
+<a href="#">🏰 中世の城</a>
+<a href="#">🌸 和風建築</a>
+<a href="#">🏙️ 港町</a>
+
+</aside>
+
+<div class="main">
+
+<div class="search-box">
+
+<input
+type="text"
+id="search"
+placeholder="建築を検索..."
+onkeyup="searchBuild()">
+
+</div>
+
+<h2 class="section-title" id="houses">
+
+🏠 家・拠点建築
+
+</h2>
 
 <div class="grid">
 
 <div class="card">
-<div class="image">🏠</div>
+
+<div class="image house">🏠</div>
+
 <div class="content">
+
 <span class="tag">初心者向け</span>
+
 <h2>木のサバイバルハウス</h2>
-<p>
-序盤に作れる定番の家。
-木材中心なので素材集めも簡単。
-</p>
+
+<p>序盤におすすめの定番住宅。</p>
+
+<details>
+
+<summary>詳細を見る</summary>
+
+<p>難易度：★☆☆☆☆</p>
+<p>素材量：★☆☆☆☆</p>
+<p>建築時間：約20分</p>
+
+</details>
+
 </div>
+
 </div>
 
 <div class="card">
-<div class="image">🏡</div>
+
+<div class="image house">🏡</div>
+
 <div class="content">
+
 <span class="tag">人気</span>
-<h2>おしゃれな村風ハウス</h2>
-<p>
-木材と石を組み合わせた
-見栄えの良い住宅。
-</p>
+
+<h2>村風ハウス</h2>
+
+<p>木材と石で作るおしゃれな住宅。</p>
+
+<details>
+
+<summary>詳細を見る</summary>
+
+<p>難易度：★★☆☆☆</p>
+<p>素材量：★★☆☆☆</p>
+<p>見た目：★★★★★</p>
+
+</details>
+
 </div>
+
 </div>
 
 <div class="card">
-<div class="image">🏰</div>
+
+<div class="image modern">🏢</div>
+
 <div class="content">
-<span class="tag">上級者向け</span>
-<h2>中世の城</h2>
-<p>
-巨大な拠点を作りたい人向け。
-石レンガが大量に必要。
-</p>
+
+<span class="tag">モダン</span>
+
+<h2>モダンハウス</h2>
+
+<p>コンクリート中心の近代建築。</p>
+
+<details>
+
+<summary>詳細を見る</summary>
+
+<p>難易度：★★★☆☆</p>
+<p>素材量：★★★☆☆</p>
+<p>見た目：★★★★★</p>
+
+</details>
+
 </div>
+
 </div>
 
 <div class="card">
-<div class="image">🌾</div>
+
+<div class="image mountain">⛰️</div>
+
 <div class="content">
-<span class="tag">実用的</span>
-<h2>農場エリア</h2>
-<p>
-畑や動物小屋をまとめた
-生活拠点。
-</p>
+
+<span class="tag">山岳建築</span>
+
+<h2>山の中の家</h2>
+
+<p>山をくり抜いて作る秘密基地風拠点。</p>
+
+<details>
+
+<summary>詳細を見る</summary>
+
+<p>難易度：★★★☆☆</p>
+<p>防御力：★★★★★</p>
+
+</details>
+
 </div>
+
 </div>
 
 <div class="card">
-<div class="image">⚓</div>
+
+<div class="image underground">🕳️</div>
+
 <div class="content">
-<span class="tag">チャレンジ</span>
-<h2>港町</h2>
-<p>
-船や倉庫を並べて
-雰囲気のある街を作れる。
-</p>
-</div>
-</div>
 
-<div class="card">
-<div class="image">🌸</div>
-<div class="content">
-<span class="tag">和風</span>
-<h2>和風建築</h2>
-<p>
-桜バイオームにも合う
-人気の建築スタイル。
-</p>
-</div>
-</div>
+<span class="tag">地下拠点</span>
+
+<h2>地下ハウス</h2>
+
+<p>安全性を重視した地下型住宅。</p>
+
+<details>
+
+<summary>詳細を見る</summary>
+
+<p>難易度：★★☆☆☆</p>
+<p>安全性：★★★★★</p>
+
+</details>
 
 </div>
 
 </div>
-
-<footer>
-© Minecraft攻略ベース
-</footer>
-
-</body>
-</html>
