@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ネザー座標変換ツール</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    max-width:700px;
+    margin:auto;
+    padding:30px;
+    background:#f5f5f5;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 10px rgba(0,0,0,.1);
+}
+
+h1{
+    color:#2e7d32;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    font-size:18px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    background:#2e7d32;
+    color:white;
+    font-size:18px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+.result{
+    margin-top:20px;
+    font-size:20px;
+    font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>🔥 ネザー座標変換ツール</h1>
+
+<p>オーバーワールド座標を入力してください。</p>
+
+<input type="number" id="x" placeholder="X座標">
+<input type="number" id="z" placeholder="Z座標">
+
+<button onclick="convert()">変換する</button>
+
+<div class="result" id="result"></div>
+</div>
+
+<script>
+function convert(){
+
+    let x = Number(document.getElementById("x").value);
+    let z = Number(document.getElementById("z").value);
+
+    let netherX = (x / 8).toFixed(1);
+    let netherZ = (z / 8).toFixed(1);
+
+    document.getElementById("result").innerHTML =
+        `ネザー座標: X ${netherX} / Z ${netherZ}`;
+}
+</script>
+
+</body>
+</html>
