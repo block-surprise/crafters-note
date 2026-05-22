@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>経験値計算ツール | Minecraft攻略ベース</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
+}
+
+header{
+    background:#43a047;
+    color:white;
+    text-align:center;
+    padding:40px;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:30px auto;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    margin-bottom:20px;
+}
+
+h2{
+    color:#2e7d32;
+}
+
+input,
+select{
+    width:100%;
+    padding:12px;
+    margin-top:8px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+button{
+    background:#43a047;
+    color:white;
+    border:none;
+    padding:15px 25px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#2e7d32;
+}
+
+.result{
+    margin-top:20px;
+    padding:20px;
+    background:#e8f5e9;
+    border-radius:10px;
+    font-size:18px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,
+td{
+    border:1px solid #ddd;
+    padding:10px;
+}
+
+th{
+    background:#c8e6c9;
+}
+
+footer{
+    background:#2e7d32;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>🧮 経験値計算ツール</h1>
+
+<p>Minecraft攻略ベース</p>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>経験値をモブ数に換算</h2>
+
+<label>現在レベル</label>
+<input type="number" id="current" value="0">
+
+<label>目標レベル</label>
+<input type="number" id="target" value="30">
+
+<label>モブ</label>
+<select id="mob">
+
+<option value="5">ゾンビ</option>
+<option value="5">スケルトン</option>
+<option value="5">クリーパー</option>
+<option value="5">エンダーマン</option>
+<option value="10">ブレイズ</option>
+
+</select>
+
+<button onclick="calculateXP()">
+計算する
+</button>
+
+<div id="result" class="result">
+
+結果がここに表示されます
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>経験値目安一覧</h2>
+
+<table>
+
+<tr>
+<th>モブ</th>
+<th>経験値(目安)</th>
+</tr>
+
+<tr>
+<td>ゾンビ</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>スケルトン</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>クリーパー</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>エンダーマン</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>ブレイズ</td>
+<td>10</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 Minecraft攻略ベース
+
+</footer>
+
+<script>
+
+function calculateXP(){
+
+let current =
+parseInt(document.getElementById("current").value);
+
+let target =
+parseInt(document.getElementById("target").value);
+
+let mobXP =
+parseInt(document.getElementById("mob").value);
+
+if(target <= current){
+
+document.getElementById("result").innerHTML =
+"目標レベルは現在レベルより高くしてください。";
+
+return;
+
+}
+
+let neededXP =
+(target - current) * 50;
+
+let mobs =
+Math.ceil(neededXP / mobXP);
+
+document.getElementById("result").innerHTML =
+
+"必要経験値：約 <strong>" +
+neededXP +
+" XP</strong><br><br>" +
+
+"必要討伐数：約 <strong>" +
+mobs +
+" 体</strong>";
+
+}
+
+</script>
+
+</body>
+</html>
