@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>モブ図鑑</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#e8f5e9;
+}
+
+header{
+    background:#2e7d32;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:30px auto;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.mob{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.mob h2{
+    margin-top:0;
+    color:#2e7d32;
+}
+
+.tag{
+    display:inline-block;
+    background:#4caf50;
+    color:white;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:14px;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>👾 モブ図鑑</h1>
+<p>マイクラの主要モブを紹介</p>
+</header>
+
+<div class="container">
+
+<div class="grid">
+
+<div class="mob">
+<h2>🧟 ゾンビ</h2>
+<span class="tag">敵モブ</span>
+<p><strong>体力:</strong> 20</p>
+<p><strong>ドロップ:</strong> 腐った肉</p>
+<p>夜や暗い場所に出現。</p>
+</div>
+
+<div class="mob">
+<h2>💀 スケルトン</h2>
+<span class="tag">敵モブ</span>
+<p><strong>体力:</strong> 20</p>
+<p><strong>ドロップ:</strong> 骨・矢</p>
+<p>遠距離攻撃が得意。</p>
+</div>
+
+<div class="mob">
+<h2>🕷️ クモ</h2>
+<span class="tag">敵モブ</span>
+<p><strong>体力:</strong> 16</p>
+<p><strong>ドロップ:</strong> 糸</p>
+<p>壁を登ることができる。</p>
+</div>
+
+<div class="mob">
+<h2>🐄 ウシ</h2>
+<span class="tag">友好モブ</span>
+<p><strong>ドロップ:</strong> 牛肉・革</p>
+<p>革集めに便利。</p>
+</div>
+
+<div class="mob">
+<h2>🐑 ヒツジ</h2>
+<span class="tag">友好モブ</span>
+<p><strong>ドロップ:</strong> 羊毛</p>
+<p>ベッド作成に必須。</p>
+</div>
+
+<div class="mob">
+<h2>🐷 ブタ</h2>
+<span class="tag">友好モブ</span>
+<p><strong>ドロップ:</strong> 豚肉</p>
+<p>食料として活躍。</p>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+© Minecraft攻略ベース
+</footer>
+
+</body>
+</html>
