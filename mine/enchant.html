@@ -4,14 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>エンチャント一覧</title>
+<title>エンチャント一覧 | Minecraft攻略ベース</title>
 
 <style>
+
+*{
+    box-sizing:border-box;
+}
+
 body{
     margin:0;
     background:#f5f5f5;
     font-family:Arial,sans-serif;
 }
+
+/* ヘッダー */
 
 header{
     background:#512da8;
@@ -20,24 +27,162 @@ header{
     padding:40px;
 }
 
-.container{
-    width:90%;
-    max-width:1000px;
-    margin:30px auto;
+header h1{
+    margin:0;
 }
+
+/* ナビゲーション */
+
+.navbar{
+    background:#4527a0;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    padding:15px 20px;
+}
+
+.navbar a:hover{
+    background:#311b92;
+}
+
+/* 検索 */
+
+.search-box{
+    text-align:center;
+    padding:20px;
+}
+
+.search-box input{
+    width:350px;
+    max-width:90%;
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:16px;
+}
+
+/* レイアウト */
+
+.layout{
+    display:flex;
+    max-width:1400px;
+    margin:auto;
+}
+
+/* サイドバー */
+
+.sidebar{
+    width:250px;
+    background:white;
+    margin:30px 20px;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    height:fit-content;
+}
+
+.sidebar h3{
+    margin-top:0;
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar li{
+    margin:12px 0;
+}
+
+.sidebar a{
+    text-decoration:none;
+    color:#333;
+}
+
+.sidebar a:hover{
+    color:#512da8;
+}
+
+/* メイン */
+
+.container{
+    flex:1;
+    margin:30px 20px 30px 0;
+}
+
+/* カード */
 
 .card{
     background:white;
     margin-bottom:20px;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 2px 8px rgba(0,0,0,.1);
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.card h2{
+    margin-top:0;
 }
 
 .level{
     color:#673ab7;
     font-weight:bold;
 }
+
+.tip{
+    background:#ede7f6;
+    border-left:5px solid #512da8;
+    padding:12px;
+    margin-top:15px;
+}
+
+.detail-btn{
+    display:inline-block;
+    margin-top:15px;
+    background:#512da8;
+    color:white;
+    text-decoration:none;
+    padding:10px 15px;
+    border-radius:8px;
+}
+
+.detail-btn:hover{
+    background:#311b92;
+}
+
+/* フッター */
+
+footer{
+    background:#4527a0;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* スマホ */
+
+@media(max-width:900px){
+
+.layout{
+    flex-direction:column;
+}
+
+.sidebar{
+    width:auto;
+    margin:20px;
+}
+
+.container{
+    margin:20px;
+}
+
+}
+
 </style>
 </head>
 
@@ -45,42 +190,844 @@ header{
 
 <header>
 <h1>⚔ エンチャント一覧</h1>
-<p>おすすめエンチャントを解説</p>
+<p>Minecraft攻略ベースのエンチャント完全ガイド</p>
 </header>
 
-<div class="container">
+<nav class="navbar">
+<a href="index.html">🏠 ホーム</a>
+<a href="beginner.html">🌱 初心者ガイド</a>
+<a href="mobs.html">👾 モブ図鑑</a>
+<a href="ores.html">⛏️ 鉱石ガイド</a>
+<a href="enchant.html">⚔ エンチャント</a>
+<a href="builds.html">🏗️ 建築集</a>
+</nav>
 
-<div class="card">
-<h2>効率強化</h2>
-<p class="level">最大レベル V</p>
-<p>ツールの採掘速度が上昇する。</p>
+<div class="search-box">
+<input
+type="text"
+id="search"
+placeholder="エンチャント名を検索..."
+onkeyup="searchEnchant()">
+</div>
+    <div class="layout">
+
+<!-- サイドバー -->
+
+<aside class="sidebar">
+
+<h3>📚 カテゴリー</h3>
+
+<ul>
+<li><a href="#tool">⛏ ツール</a></li>
+<li><a href="#weapon">⚔ 武器</a></li>
+<li><a href="#armor">🛡 防具</a></li>
+<li><a href="#bow">🏹 弓</a></li>
+<li><a href="#crossbow">🏹 クロスボウ</a></li>
+<li><a href="#trident">🔱 トライデント</a></li>
+<li><a href="#fishing">🎣 釣り竿</a></li>
+</ul>
+
+<hr>
+
+<h3>⭐ 人気エンチャント</h3>
+
+<ul>
+<li><a href="#mending">修繕</a></li>
+<li><a href="#efficiency">効率強化</a></li>
+<li><a href="#sharpness">鋭さ</a></li>
+<li><a href="#protection">防護</a></li>
+<li><a href="#infinity">無限</a></li>
+</ul>
+
+</aside>
+
+<!-- メイン -->
+
+<main class="container">
+
+<!-- ツール -->
+
+<div class="card" id="tool">
+
+<h2>⛏ ツールエンチャント</h2>
+
+<p>
+採掘や素材集めを効率化するエンチャント。
+サバイバルでは最優先で強化したいカテゴリーです。
+</p>
+
 </div>
 
+<!-- 効率強化 -->
+
+<div class="card" id="efficiency">
+
+<h2>⛏ 効率強化</h2>
+
+<p class="level">最大レベル V</p>
+
+<p>
+ツルハシ・シャベル・斧の採掘速度を大きく上昇させます。
+採掘時間を短縮できるため非常に人気です。
+</p>
+
+<p><strong>おすすめ度：</strong>★★★★★</p>
+
+<ul>
+<li>ツルハシ向け</li>
+<li>シャベル向け</li>
+<li>斧向け</li>
+</ul>
+
+<div class="tip">
+💡 ダイヤやネザライトツールに付けると快適さが段違いです。
+</div>
+
+<a href="enchant-efficiency.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<!-- 耐久力 -->
+
 <div class="card">
-<h2>耐久力</h2>
+
+<h2>🛠 耐久力</h2>
+
 <p class="level">最大レベル III</p>
-<p>道具が壊れにくくなる。</p>
+
+<p>
+アイテムが壊れにくくなります。
+どの装備にも付けて損はありません。
+</p>
+
+<p><strong>おすすめ度：</strong>★★★★★</p>
+
+<ul>
+<li>全ツール対応</li>
+<li>全防具対応</li>
+<li>武器にも有効</li>
+</ul>
+
+<div class="tip">
+💡 修繕と組み合わせると半永久的に使えます。
 </div>
 
-<div class="card">
-<h2>修繕</h2>
+<a href="enchant-unbreaking.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<!-- 修繕 -->
+
+<div class="card" id="mending">
+
+<h2>✨ 修繕</h2>
+
 <p class="level">最大レベル I</p>
-<p>経験値で耐久値を回復できる。</p>
+
+<p>
+経験値を使って装備の耐久値を回復します。
+最強クラスのエンチャントとして知られています。
+</p>
+
+<p><strong>おすすめ度：</strong>★★★★★</p>
+
+<ul>
+<li>経験値で修理</li>
+<li>金床不要</li>
+<li>全装備推奨</li>
+</ul>
+
+<div class="tip">
+💡 村人との取引で入手するのが一般的です。
 </div>
 
+<a href="enchant-mending.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<!-- 幸運 -->
+
 <div class="card">
-<h2>鋭さ</h2>
+
+<h2>🍀 幸運</h2>
+
+<p class="level">最大レベル III</p>
+
+<p>
+鉱石や作物などのドロップ数を増加させます。
+資源集めの効率が大幅に向上します。
+</p>
+
+<p><strong>おすすめ度：</strong>★★★★★</p>
+
+<ul>
+<li>ダイヤ増加</li>
+<li>石炭増加</li>
+<li>レッドストーン増加</li>
+<li>ラピス増加</li>
+</ul>
+
+<div class="tip">
+💡 シルクタッチと同時には付けられません。
+</div>
+
+<a href="enchant-fortune.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<!-- シルクタッチ -->
+
+<div class="card">
+
+<h2>🧊 シルクタッチ</h2>
+
+<p class="level">最大レベル I</p>
+
+<p>
+ブロックをそのまま回収できる特殊なエンチャントです。
+ガラスやエンダーチェスト回収に便利です。
+</p>
+
+<p><strong>おすすめ度：</strong>★★★★☆</p>
+
+<ul>
+<li>ガラス回収</li>
+<li>鉱石保存</li>
+<li>エンダーチェスト回収</li>
+</ul>
+
+<div class="tip">
+💡 建築勢には必須級のエンチャントです。
+</div>
+
+<a href="enchant-silktouch.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+    <!-- 武器 -->
+
+<div class="card" id="weapon">
+
+<h2>⚔ 武器エンチャント</h2>
+
+<p>
+戦闘を有利に進めるためのエンチャント。
+モブ討伐やボス戦で活躍します。
+</p>
+
+</div>
+
+<!-- 鋭さ -->
+
+<div class="card" id="sharpness">
+
+<h2>⚔ 鋭さ</h2>
+
 <p class="level">最大レベル V</p>
-<p>近接攻撃ダメージを増加。</p>
+
+<p>
+剣や斧の攻撃力を上昇させます。
+最も人気のある武器エンチャントです。
+</p>
+
+<p><strong>おすすめ度：</strong>★★★★★</p>
+
+<ul>
+<li>ゾンビ対策</li>
+<li>スケルトン対策</li>
+<li>ボス戦向き</li>
+</ul>
+
+<div class="tip">
+💡 迷ったらまず鋭さを付けましょう。
 </div>
+
+<a href="enchant-sharpness.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<!-- ドロップ増加 -->
 
 <div class="card">
-<h2>無限</h2>
-<p class="level">最大レベル I</p>
-<p>矢を1本持っていれば撃ち放題。</p>
+
+<h2>💰 ドロップ増加</h2>
+
+<p class="level">最大レベル III</p>
+
+<p>
+モブから入手できるアイテム数を増加させます。
+素材集めに最適です。
+</p>
+
+<p><strong>おすすめ度：</strong>★★★★★</p>
+
+<ul>
+<li>エンダーパール集め</li>
+<li>火薬集め</li>
+<li>ウィザースケルトン討伐</li>
+</ul>
+
+<div class="tip">
+💡 レアドロップ狙いなら必須です。
 </div>
 
+<a href="enchant-looting.html" class="detail-btn">
+詳細を見る →
+</a>
+
 </div>
+
+<!-- 火属性 -->
+
+<div class="card">
+
+<h2>🔥 火属性</h2>
+
+<p class="level">最大レベル II</p>
+
+<p>
+攻撃した敵を燃やします。
+追加ダメージを与えられます。
+</p>
+
+<p><strong>おすすめ度：</strong>★★★★☆</p>
+
+<ul>
+<li>追加ダメージ</li>
+<li>肉を焼いた状態で入手</li>
+</ul>
+
+<div class="tip">
+💡 動物を倒すと焼けた肉を入手できます。
+</div>
+
+<a href="enchant-fireaspect.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<!-- ノックバック -->
+
+<div class="card">
+
+<h2>🌪 ノックバック</h2>
+
+<p class="level">最大レベル II</p>
+
+<p>
+敵を遠くへ吹き飛ばします。
+落下ダメージも狙えます。
+</p>
+
+<p><strong>おすすめ度：</strong>★★★☆☆</p>
+
+<div class="tip">
+💡 崖の近くでは強力ですが使いづらい場面もあります。
+</div>
+
+<a href="enchant-knockback.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<!-- 防具 -->
+
+<div class="card" id="armor">
+
+<h2>🛡 防具エンチャント</h2>
+
+<p>
+生存率を大きく上げる重要なエンチャントです。
+</p>
+
+</div>
+
+<!-- 防護 -->
+
+<div class="card" id="protection">
+
+<h2>🛡 防護</h2>
+
+<p class="level">最大レベル IV</p>
+
+<p>
+ほぼ全てのダメージを軽減します。
+防具エンチャントの基本です。
+</p>
+
+<p><strong>おすすめ度：</strong>★★★★★</p>
+
+<ul>
+<li>対モブ</li>
+<li>対ボス</li>
+<li>探索全般</li>
+</ul>
+
+<div class="tip">
+💡 全身防護IVを目指しましょう。
+</div>
+
+<a href="enchant-protection.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<!-- 爆発耐性 -->
+
+<div class="card">
+
+<h2>💥 爆発耐性</h2>
+
+<p class="level">最大レベル IV</p>
+
+<p>
+クリーパーやTNTの爆発ダメージを軽減します。
+</p>
+
+<p><strong>おすすめ度：</strong>★★★★☆</p>
+
+<div class="tip">
+💡 クリーパー事故対策に便利です。
+</div>
+
+<a href="enchant-blastprotection.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<!-- 火炎耐性 -->
+
+<div class="card">
+
+<h2>🔥 火炎耐性</h2>
+
+<p class="level">最大レベル IV</p>
+
+<p>
+火や溶岩によるダメージを軽減します。
+ネザー探索向きです。
+</p>
+
+<p><strong>おすすめ度：</strong>★★★★☆</p>
+
+<div class="tip">
+💡 ネザーによく行く人におすすめです。
+</div>
+
+<a href="enchant-fireprotection.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<!-- 水中呼吸 -->
+
+<div class="card">
+
+<h2>🌊 水中呼吸</h2>
+
+<p class="level">最大レベル III</p>
+
+<p>
+水中で息が続く時間を延長します。
+海底神殿攻略にも役立ちます。
+</p>
+
+<p><strong>おすすめ度：</strong>★★★★☆</p>
+
+<ul>
+<li>海底探索</li>
+<li>沈没船探索</li>
+<li>海底神殿攻略</li>
+</ul>
+
+<div class="tip">
+💡 ヘルメット専用エンチャントです。
+</div>
+
+<a href="enchant-respiration.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<!-- 落下耐性 -->
+
+<div class="card">
+
+<h2>👢 落下耐性</h2>
+
+<p class="level">最大レベル IV</p>
+
+<p>
+落下ダメージを大きく軽減します。
+エリトラ利用時にも便利です。
+</p>
+
+<p><strong>おすすめ度：</strong>★★★★★</p>
+
+<ul>
+<li>高所建築</li>
+<li>エンド探索</li>
+<li>エリトラ飛行</li>
+</ul>
+
+<div class="tip">
+💡 ブーツにはほぼ必須のエンチャントです。
+</div>
+
+<a href="enchant-featherfalling.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+    <!-- 弓 -->
+
+<div class="card" id="bow">
+
+<h2>🏹 弓エンチャント</h2>
+
+<p>
+遠距離攻撃を強化するエンチャント。
+探索やボス戦で活躍します。
+</p>
+
+</div>
+
+<!-- 無限 -->
+
+<div class="card" id="infinity">
+
+<h2>🏹 無限</h2>
+
+<p class="level">最大レベル I</p>
+
+<p>
+矢を1本持っていれば撃ち続けられます。
+非常に人気の高いエンチャントです。
+</p>
+
+<p><strong>おすすめ度：</strong>★★★★★</p>
+
+<ul>
+<li>矢の節約</li>
+<li>長距離戦向け</li>
+<li>探索向け</li>
+</ul>
+
+<div class="tip">
+💡 修繕とは同時に付けられません。
+</div>
+
+<a href="enchant-infinity.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<!-- パワー -->
+
+<div class="card">
+
+<h2>🎯 パワー</h2>
+
+<p class="level">最大レベル V</p>
+
+<p>
+弓のダメージを上昇させます。
+弓を使うなら最優先です。
+</p>
+
+<p><strong>おすすめ度：</strong>★★★★★</p>
+
+<div class="tip">
+💡 パワーVは非常に強力です。
+</div>
+
+<a href="enchant-power.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<!-- フレイム -->
+
+<div class="card">
+
+<h2>🔥 フレイム</h2>
+
+<p class="level">最大レベル I</p>
+
+<p>
+矢に火を付けて攻撃できます。
+追加ダメージを与えられます。
+</p>
+
+<a href="enchant-flame.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<!-- クロスボウ -->
+
+<div class="card" id="crossbow">
+
+<h2>🏹 クロスボウエンチャント</h2>
+
+<p>
+クロスボウ専用の特殊エンチャントです。
+</p>
+
+</div>
+
+<!-- 高速装填 -->
+
+<div class="card">
+
+<h2>⚡ 高速装填</h2>
+
+<p class="level">最大レベル III</p>
+
+<p>
+クロスボウの装填速度を上昇させます。
+</p>
+
+<p><strong>おすすめ度：</strong>★★★★★</p>
+
+<div class="tip">
+💡 クロスボウ使いなら必須級です。
+</div>
+
+<a href="enchant-quickcharge.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<!-- 貫通 -->
+
+<div class="card">
+
+<h2>➡️ 貫通</h2>
+
+<p class="level">最大レベル IV</p>
+
+<p>
+矢が複数の敵を貫通します。
+</p>
+
+<a href="enchant-piercing.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<!-- トライデント -->
+
+<div class="card" id="trident">
+
+<h2>🔱 トライデントエンチャント</h2>
+
+<p>
+トライデント専用エンチャントです。
+</p>
+
+</div>
+
+<!-- 忠誠 -->
+
+<div class="card">
+
+<h2>🔄 忠誠</h2>
+
+<p class="level">最大レベル III</p>
+
+<p>
+投げたトライデントが戻ってきます。
+</p>
+
+<p><strong>おすすめ度：</strong>★★★★★</p>
+
+<div class="tip">
+💡 トライデントを失う心配がなくなります。
+</div>
+
+<a href="enchant-loyalty.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<!-- 召雷 -->
+
+<div class="card">
+
+<h2>🌩 召雷</h2>
+
+<p class="level">最大レベル I</p>
+
+<p>
+雷雨時に雷を落とせます。
+</p>
+
+<p><strong>おすすめ度：</strong>★★★★☆</p>
+
+<div class="tip">
+💡 クリーパーを帯電クリーパーにできます。
+</div>
+
+<a href="enchant-channeling.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<!-- 激流 -->
+
+<div class="card">
+
+<h2>🌊 激流</h2>
+
+<p class="level">最大レベル III</p>
+
+<p>
+水中で高速移動できます。
+</p>
+
+<a href="enchant-riptide.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<!-- 釣り竿 -->
+
+<div class="card" id="fishing">
+
+<h2>🎣 釣り竿エンチャント</h2>
+
+<p>
+釣りを効率化するエンチャントです。
+</p>
+
+</div>
+
+<!-- 宝釣り -->
+
+<div class="card">
+
+<h2>💎 宝釣り</h2>
+
+<p class="level">最大レベル III</p>
+
+<p>
+レアアイテムが釣れやすくなります。
+</p>
+
+<p><strong>おすすめ度：</strong>★★★★★</p>
+
+<ul>
+<li>エンチャント本</li>
+<li>名札</li>
+<li>サドル</li>
+</ul>
+
+<div class="tip">
+💡 修繕付きの本を狙うなら必須です。
+</div>
+
+<a href="enchant-luckofthesea.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+<!-- 入れ食い -->
+
+<div class="card">
+
+<h2>🐟 入れ食い</h2>
+
+<p class="level">最大レベル III</p>
+
+<p>
+魚がかかるまでの時間を短縮します。
+</p>
+
+<p><strong>おすすめ度：</strong>★★★★☆</p>
+
+<div class="tip">
+💡 AFK釣りとも相性が良いです。
+</div>
+
+<a href="enchant-lure.html" class="detail-btn">
+詳細を見る →
+</a>
+
+</div>
+
+</main>
+
+</div>
+
+<footer>
+
+<h3>Minecraft攻略ベース</h3>
+
+<p>
+初心者向けガイドから上級者向け攻略まで掲載中
+</p>
+
+<p>
+© 2026 Minecraft攻略ベース
+</p>
+
+</footer>
+
+<script>
+
+function searchEnchant(){
+
+const input =
+document.getElementById("search")
+.value.toLowerCase();
+
+const cards =
+document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+const text =
+card.textContent.toLowerCase();
+
+if(text.includes(input)){
+card.style.display="block";
+}
+else{
+card.style.display="none";
+}
+
+});
+
+}
+
+</script>
 
 </body>
 </html>
