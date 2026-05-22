@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>村人完全ガイド | Minecraft攻略ベース</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#f5f5f5;
+line-height:1.8;
+}
+
+header{
+background:#43a047;
+color:white;
+text-align:center;
+padding:40px 20px;
+}
+
+.navbar{
+background:#2e7d32;
+text-align:center;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+padding:15px 20px;
+display:inline-block;
+}
+
+.navbar a:hover{
+background:rgba(255,255,255,.15);
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:30px auto;
+}
+
+.card{
+background:white;
+padding:25px;
+margin-bottom:25px;
+border-radius:15px;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+h2{
+color:#2e7d32;
+margin-bottom:15px;
+}
+
+h3{
+margin-top:15px;
+color:#388e3c;
+}
+
+.tip{
+background:#e8f5e9;
+border-left:5px solid #43a047;
+padding:15px;
+margin-top:15px;
+}
+
+.warning{
+background:#fff8e1;
+border-left:5px solid #f9a825;
+padding:15px;
+margin-top:15px;
+}
+
+.rank{
+font-size:22px;
+font-weight:bold;
+color:#2e7d32;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+th,td{
+border:1px solid #ddd;
+padding:12px;
+text-align:left;
+}
+
+th{
+background:#e8f5e9;
+}
+
+details{
+margin-top:15px;
+border:1px solid #ddd;
+border-radius:10px;
+overflow:hidden;
+}
+
+summary{
+cursor:pointer;
+padding:15px;
+font-weight:bold;
+background:#fafafa;
+}
+
+.details-content{
+padding:15px;
+}
+
+.related a{
+display:block;
+padding:8px 0;
+color:#2e7d32;
+text-decoration:none;
+}
+
+.related a:hover{
+text-decoration:underline;
+}
+
+footer{
+background:#2e7d32;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+.search-box{
+width:100%;
+padding:12px;
+border:1px solid #ccc;
+border-radius:8px;
+margin-top:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🏘️ 村人完全ガイド</h1>
+<p>職業・増殖・取引・厳選まで徹底解説</p>
+</header>
+
+<nav class="navbar">
+<a href="index.html">🏠 ホーム</a>
+<a href="beginner.html">🌱 初心者ガイド</a>
+<a href="ores.html">⛏️ 鉱石ガイド</a>
+<a href="enchant.html">⚔️ エンチャント一覧</a>
+<a href="villager-guide.html">🏘️ 村人ガイド</a>
+</nav>
+
+<div class="container">
+
+<div class="card">
+
+<h2>村人とは？</h2>
+
+<p>
+村人はMinecraftで最も重要なモブの一つです。
+エメラルドを使った取引によって、
+強力な装備やエンチャント本を入手できます。
+</p>
+
+<p>
+エンドラ討伐後も長く活躍するため、
+村人施設を作ることは上級者への第一歩です。
+</p>
+
+<p class="rank">
+★★★★★ 超重要モブ
+</p>
+
+<div class="tip">
+💡 修繕・効率強化・耐久力などのエンチャント本は村人取引が最も安定します。
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>村人の基本情報</h2>
+
+<table>
+
+<tr>
+<th>項目</th>
+<th>内容</th>
+</tr>
+
+<tr>
+<td>スポーン場所</td>
+<td>村</td>
+</tr>
+
+<tr>
+<td>取引通貨</td>
+<td>エメラルド</td>
+</tr>
+
+<tr>
+<td>繁殖可能</td>
+<td>〇</td>
+</tr>
+
+<tr>
+<td>職業変更</td>
+<td>〇</td>
+</tr>
+
+<tr>
+<td>ゾンビ治療割引</td>
+<td>〇</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h2>職業一覧</h2>
+
+<input type="text" id="jobSearch" class="search-box"
+placeholder="職業名で検索...">
+
+<table id="jobTable">
+
+<tr>
+<th>職業</th>
+<th>職業ブロック</th>
+<th>おすすめ度</th>
+</tr>
+
+<tr>
+<td>司書</td>
+<td>書見台</td>
+<td>★★★★★</td>
+</tr>
+
+<tr>
+<td>道具鍛冶</td>
+<td>鍛冶台</td>
+<td>★★★★★</td>
+</tr>
+
+<tr>
+<td>武器鍛冶</td>
+<td>砥石</td>
+<td>★★★★☆</td>
+</tr>
+
+<tr>
+<td>防具鍛冶</td>
+<td>溶鉱炉</td>
+<td>★★★★☆</td>
+</tr>
+
+<tr>
+<td>農民</td>
+<td>コンポスター</td>
+<td>★★★★★</td>
+</tr>
+
+<tr>
+<td>石工</td>
+<td>石切台</td>
+<td>★★★★☆</td>
+</tr>
+
+<tr>
+<td>製図家</td>
+<td>製図台</td>
+<td>★★★☆☆</td>
+</tr>
+
+<tr>
+<td>矢師</td>
+<td>矢細工台</td>
+<td>★★★★☆</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h2>おすすめ職業ランキング</h2>
+
+<table>
+
+<tr>
+<th>順位</th>
+<th>職業</th>
+<th>理由</th>
+</tr>
+
+<tr>
+<td>1位</td>
+<td>司書</td>
+<td>修繕や強力な本を販売</td>
+</tr>
+
+<tr>
+<td>2位</td>
+<td>農民</td>
+<td>エメラルド稼ぎが簡単</td>
+</tr>
+
+<tr>
+<td>3位</td>
+<td>道具鍛冶</td>
+<td>ダイヤ道具を販売</td>
+</tr>
+
+<tr>
+<td>4位</td>
+<td>防具鍛冶</td>
+<td>ダイヤ防具を販売</td>
+</tr>
+
+<tr>
+<td>5位</td>
+<td>武器鍛冶</td>
+<td>ダイヤ武器を販売</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h2>村人増殖方法</h2>
+
+<ol>
+
+<li>ベッドを用意する</li>
+
+<li>村人を2人以上集める</li>
+
+<li>パンやニンジンを渡す</li>
+
+<li>空きベッドを置く</li>
+
+<li>子供村人誕生</li>
+
+</ol>
+
+<div class="tip">
+🥕 ニンジン・ジャガイモ・パンが人気です。
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>司書厳選ガイド</h2>
+
+<p>
+最も人気の高い村人厳選です。
+</p>
+
+<table>
+
+<tr>
+<th>狙う本</th>
+<th>重要度</th>
+</tr>
+
+<tr>
+<td>修繕</td>
+<td>★★★★★</td>
+</tr>
+
+<tr>
+<td>効率強化V</td>
+<td>★★★★★</td>
+</tr>
+
+<tr>
+<td>耐久力III</td>
+<td>★★★★★</td>
+</tr>
+
+<tr>
+<td>シルクタッチ</td>
+<td>★★★★★</td>
+</tr>
+
+<tr>
+<td>幸運III</td>
+<td>★★★★★</td>
+</tr>
+
+</table>
+
+<div class="tip">
+💡 取引前なら職業ブロックを壊して何度でも変更できます。
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>ゾンビ治療割引</h2>
+
+<p>
+村人をゾンビ化してから治療すると、
+取引価格を大幅に下げられます。
+</p>
+
+<table>
+
+<tr>
+<th>必要アイテム</th>
+<th>用途</th>
+</tr>
+
+<tr>
+<td>弱化のスプラッシュポーション</td>
+<td>弱体化</td>
+</tr>
+
+<tr>
+<td>金リンゴ</td>
+<td>治療</td>
+</tr>
+
+</table>
+
+<div class="warning">
+⚠️ ハード以外ではゾンビ化に失敗する場合があります。
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>よくある質問</h2>
+
+<details>
+<summary>修繕は司書から出る？</summary>
+<div class="details-content">
+はい。司書厳選の最重要候補です。
+</div>
+</details>
+
+<details>
+<summary>職業変更できない</summary>
+<div class="details-content">
+一度でも取引すると職業固定になります。
+</div>
+</details>
+
+<details>
+<summary>村人が増えない</summary>
+<div class="details-content">
+ベッド不足や食料不足が原因のことが多いです。
+</div>
+</details>
+
+<details>
+<summary>最強の職業は？</summary>
+<div class="details-content">
+多くのプレイヤーは司書を最重要と考えています。
+</div>
+</details>
+
+</div>
+
+<div class="card related">
+
+<h2>関連記事</h2>
+
+<a href="enchant-mending.html">✨ 修繕完全ガイド</a>
+<a href="emerald-farm.html">💎 エメラルド農場ガイド</a>
+<a href="iron-farm.html">⚙️ アイアンゴーレムトラップ</a>
+<a href="villager-breeder.html">👶 村人増殖施設の作り方</a>
+
+</div>
+
+<div class="card">
+
+<h2>まとめ</h2>
+
+<p>
+村人はMinecraftで最も価値の高いモブです。
+特に司書・農民・鍛冶系村人はゲーム攻略を大きく楽にしてくれます。
+村人増殖施設と取引所を作れば、
+エンドコンテンツまで快適に進められるようになります。
+</p>
+
+<p class="rank">
+総合評価：★★★★★
+</p>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Minecraft攻略ベース
+</footer>
+
+<script>
+
+const search = document.getElementById("jobSearch");
+
+search.addEventListener("keyup", function(){
+
+let filter = this.value.toLowerCase();
+let table = document.getElementById("jobTable");
+let rows = table.getElementsByTagName("tr");
+
+for(let i=1;i<rows.length;i++){
+
+let txt = rows[i].textContent.toLowerCase();
+
+rows[i].style.display =
+txt.indexOf(filter) > -1 ? "" : "none";
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
