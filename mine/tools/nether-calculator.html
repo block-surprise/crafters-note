@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ネザー座標変換ツール | Minecraft攻略ベース</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
+}
+
+header{
+    background:#c62828;
+    color:white;
+    text-align:center;
+    padding:40px;
+}
+
+.navbar{
+    background:#8e0000;
+    text-align:center;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    display:inline-block;
+    padding:15px;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:30px auto;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+button{
+    background:#c62828;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#8e0000;
+}
+
+.result{
+    margin-top:20px;
+    padding:20px;
+    background:#ffebee;
+    border-radius:10px;
+}
+
+.tip{
+    background:#fff3e0;
+    border-left:5px solid #fb8c00;
+    padding:15px;
+    margin-top:15px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:10px;
+}
+
+th{
+    background:#ffcdd2;
+}
+
+footer{
+    background:#8e0000;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>🌍 ネザー座標変換ツール</h1>
+
+<p>Minecraft攻略ベース</p>
+
+</header>
+
+<nav class="navbar">
+
+<a href="index.html">🏠 ホーム</a>
+<a href="tools.html">🧰 便利ツール集</a>
+
+</nav>
+
+<div class="container">
+
+<div class="card">
+
+<h2>オーバーワールド → ネザー</h2>
+
+<p>X座標とZ座標を入力してください。</p>
+
+<input type="number" id="x" placeholder="X座標">
+
+<input type="number" id="z" placeholder="Z座標">
+
+<button onclick="convertToNether()">
+変換する
+</button>
+
+<div id="result1" class="result">
+
+結果がここに表示されます
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>ネザー → オーバーワールド</h2>
+
+<input type="number" id="nx" placeholder="X座標">
+
+<input type="number" id="nz" placeholder="Z座標">
+
+<button onclick="convertToOverworld()">
+変換する
+</button>
+
+<div id="result2" class="result">
+
+結果がここに表示されます
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>座標変換の仕組み</h2>
+
+<table>
+
+<tr>
+<th>変換</th>
+<th>計算式</th>
+</tr>
+
+<tr>
+<td>オーバーワールド → ネザー</td>
+<td>÷8</td>
+</tr>
+
+<tr>
+<td>ネザー → オーバーワールド</td>
+<td>×8</td>
+</tr>
+
+</table>
+
+<div class="tip">
+
+💡 ネザーでは1ブロック移動すると、
+オーバーワールドでは8ブロック移動したことになります。
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 Minecraft攻略ベース
+
+</footer>
+
+<script>
+
+function convertToNether(){
+
+let x =
+parseFloat(document.getElementById("x").value);
+
+let z =
+parseFloat(document.getElementById("z").value);
+
+if(isNaN(x) || isNaN(z)){
+return;
+}
+
+document.getElementById("result1").innerHTML =
+
+"<strong>ネザー座標</strong><br><br>" +
+
+"X : " + (x/8).toFixed(1) + "<br>" +
+
+"Z : " + (z/8).toFixed(1);
+
+}
+
+function convertToOverworld(){
+
+let x =
+parseFloat(document.getElementById("nx").value);
+
+let z =
+parseFloat(document.getElementById("nz").value);
+
+if(isNaN(x) || isNaN(z)){
+return;
+}
+
+document.getElementById("result2").innerHTML =
+
+"<strong>オーバーワールド座標</strong><br><br>" +
+
+"X : " + (x*8).toFixed(1) + "<br>" +
+
+"Z : " + (z*8).toFixed(1);
+
+}
+
+</script>
+
+</body>
+</html>
