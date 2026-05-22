@@ -4,117 +4,610 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>モブ図鑑</title>
+<title>モブ図鑑 | Minecraft攻略ベース</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0GD81F1VCB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-0GD81F1VCB');
+</script>
 <style>
+
+*{
+box-sizing:border-box;
+}
+
 body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#e8f5e9;
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f5f5;
 }
 
 header{
-    background:#2e7d32;
-    color:white;
-    text-align:center;
-    padding:30px;
+background:#2e7d32;
+color:white;
+text-align:center;
+padding:40px;
 }
 
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:30px auto;
+.navbar{
+background:#1b5e20;
+text-align:center;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+padding:15px;
+display:inline-block;
+}
+
+.navbar a:hover{
+background:#388e3c;
+}
+
+.layout{
+display:flex;
+max-width:1400px;
+margin:auto;
+}
+
+.sidebar{
+width:250px;
+background:white;
+padding:20px;
+box-shadow:2px 0 8px rgba(0,0,0,.1);
+min-height:100vh;
+}
+
+.sidebar h3{
+color:#2e7d32;
+margin-top:0;
+}
+
+.sidebar a{
+display:block;
+padding:10px;
+color:#333;
+text-decoration:none;
+border-radius:8px;
+margin-bottom:5px;
+}
+
+.sidebar a:hover{
+background:#e8f5e9;
+}
+
+.main{
+flex:1;
+padding:20px;
+}
+
+.search-box{
+background:white;
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.search-box input{
+width:100%;
+padding:15px;
+font-size:16px;
+border:1px solid #ccc;
+border-radius:10px;
+}
+
+.section-title{
+color:#2e7d32;
+margin-top:40px;
 }
 
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
 }
 
 .mob{
-    background:white;
-    border-radius:15px;
-    padding:20px;
-    box-shadow:0 3px 10px rgba(0,0,0,.1);
+background:white;
+border-radius:15px;
+padding:20px;
+box-shadow:0 3px 10px rgba(0,0,0,.1);
 }
 
 .mob h2{
-    margin-top:0;
-    color:#2e7d32;
+margin-top:0;
 }
 
 .tag{
-    display:inline-block;
-    background:#4caf50;
-    color:white;
-    padding:5px 10px;
-    border-radius:20px;
-    font-size:14px;
+display:inline-block;
+padding:5px 10px;
+border-radius:20px;
+color:white;
+font-size:14px;
+margin-bottom:10px;
+}
+
+.hostile{
+background:#d32f2f;
+}
+
+.neutral{
+background:#f57c00;
+}
+
+.friendly{
+background:#388e3c;
+}
+
+.boss{
+background:#6a1b9a;
+}
+
+details{
+margin-top:10px;
+}
+
+summary{
+cursor:pointer;
+font-weight:bold;
+color:#2e7d32;
 }
 
 footer{
-    text-align:center;
-    padding:20px;
-    margin-top:30px;
+background:#1b5e20;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:30px;
 }
+
+@media(max-width:900px){
+
+.layout{
+flex-direction:column;
+}
+
+.sidebar{
+width:100%;
+min-height:auto;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
+
 <h1>👾 モブ図鑑</h1>
-<p>マイクラの主要モブを紹介</p>
+
+<p>Minecraft攻略ベース</p>
+
 </header>
 
-<div class="container">
+<nav class="navbar">
+
+<a href="index.html">🏠 ホーム</a>
+
+<a href="beginner.html">🌱 初心者ガイド</a>
+
+<a href="ores.html">⛏️ 鉱石ガイド</a>
+
+<a href="enchant-list.html">⚔️ エンチャント</a>
+
+</nav>
+
+<div class="layout">
+
+<aside class="sidebar">
+
+<h3>📚 カテゴリ</h3>
+
+<a href="#hostile">⚔️ 敵モブ</a>
+
+<a href="#neutral">😐 中立モブ</a>
+
+<a href="#friendly">🐄 友好モブ</a>
+
+<a href="#boss">👑 ボスモブ</a>
+
+<h3>🔥 人気ガイド</h3>
+
+<a href="dragon-guide.html">🐉 エンダードラゴン</a>
+
+<a href="villager-guide.html">🏘️ 村人</a>
+
+<a href="charged-creeper-guide.html">⚡ 帯電クリーパー</a>
+
+<a href="netherite-guide.html">⬛ ネザライト</a>
+
+</aside>
+
+<div class="main">
+
+<div class="search-box">
+
+<input
+type="text"
+id="search"
+placeholder="モブ名を検索..."
+onkeyup="searchMob()">
+
+</div>
+
+<h2 class="section-title" id="hostile">
+⚔️ 敵モブ
+</h2>
 
 <div class="grid">
 
 <div class="mob">
+
+<h2>💥 クリーパー</h2>
+
+<span class="tag hostile">敵モブ</span>
+
+<p><strong>体力:</strong>20</p>
+
+<p><strong>ドロップ:</strong>火薬</p>
+
+<p><strong>危険度:</strong>★★★★★</p>
+
+<details>
+
+<summary>詳細を見る</summary>
+
+<p>
+近づくと爆発する危険なモブ。
+建築物を破壊することもある。
+</p>
+
+</details>
+
+</div>
+
+<div class="mob">
+
 <h2>🧟 ゾンビ</h2>
-<span class="tag">敵モブ</span>
-<p><strong>体力:</strong> 20</p>
-<p><strong>ドロップ:</strong> 腐った肉</p>
-<p>夜や暗い場所に出現。</p>
+
+<span class="tag hostile">敵モブ</span>
+
+<p><strong>体力:</strong>20</p>
+
+<p><strong>ドロップ:</strong>腐った肉</p>
+
+<p><strong>危険度:</strong>★★★☆☆</p>
+
+<details>
+
+<summary>詳細を見る</summary>
+
+<p>
+夜や暗所に出現する代表的な敵モブ。
+</p>
+
+</details>
+
 </div>
 
 <div class="mob">
+
 <h2>💀 スケルトン</h2>
-<span class="tag">敵モブ</span>
-<p><strong>体力:</strong> 20</p>
-<p><strong>ドロップ:</strong> 骨・矢</p>
-<p>遠距離攻撃が得意。</p>
+
+<span class="tag hostile">敵モブ</span>
+
+<p><strong>体力:</strong>20</p>
+
+<p><strong>ドロップ:</strong>骨・矢</p>
+
+<p><strong>危険度:</strong>★★★★☆</p>
+
+<details>
+
+<summary>詳細を見る</summary>
+
+<p>
+弓で遠距離攻撃を行う。
+序盤は特に危険。
+</p>
+
+</details>
+
 </div>
 
 <div class="mob">
+
 <h2>🕷️ クモ</h2>
-<span class="tag">敵モブ</span>
-<p><strong>体力:</strong> 16</p>
-<p><strong>ドロップ:</strong> 糸</p>
-<p>壁を登ることができる。</p>
+
+<span class="tag hostile">敵モブ</span>
+
+<p><strong>体力:</strong>16</p>
+
+<p><strong>ドロップ:</strong>糸</p>
+
+<p><strong>危険度:</strong>★★★☆☆</p>
+
+<details>
+
+<summary>詳細を見る</summary>
+
+<p>
+壁を登れる特殊なモブ。
+</p>
+
+</details>
+
 </div>
 
 <div class="mob">
+
+<h2>👁️ エンダーマン</h2>
+
+<span class="tag hostile">敵モブ</span>
+
+<p><strong>体力:</strong>40</p>
+
+<p><strong>ドロップ:</strong>エンダーパール</p>
+
+<p><strong>危険度:</strong>★★★★☆</p>
+
+<details>
+
+<summary>詳細を見る</summary>
+
+<p>
+目を合わせると襲ってくる。
+テレポート能力を持つ。
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+<h2 class="section-title" id="neutral">
+😐 中立モブ
+</h2>
+
+<div class="grid">
+
+<div class="mob">
+
+<h2>🐺 オオカミ</h2>
+
+<span class="tag neutral">中立モブ</span>
+
+<p><strong>ドロップ:</strong>なし</p>
+
+<p><strong>危険度:</strong>★☆☆☆☆</p>
+
+<details>
+
+<summary>詳細を見る</summary>
+
+<p>
+骨で手懐けると頼れる仲間になる。
+</p>
+
+</details>
+
+</div>
+
+<div class="mob">
+
+<h2>🛡️ アイアンゴーレム</h2>
+
+<span class="tag neutral">中立モブ</span>
+
+<p><strong>体力:</strong>100</p>
+
+<p><strong>危険度:</strong>★★★★★</p>
+
+<details>
+
+<summary>詳細を見る</summary>
+
+<p>
+村を守る強力なモブ。
+攻撃すると反撃される。
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+<h2 class="section-title" id="friendly">
+🐄 友好モブ
+</h2>
+
+<div class="grid">
+
+<div class="mob">
+
 <h2>🐄 ウシ</h2>
-<span class="tag">友好モブ</span>
-<p><strong>ドロップ:</strong> 牛肉・革</p>
-<p>革集めに便利。</p>
+
+<span class="tag friendly">友好モブ</span>
+
+<p><strong>ドロップ:</strong>牛肉・革</p>
+
+<details>
+
+<summary>詳細を見る</summary>
+
+<p>
+革や食料集めに重要。
+</p>
+
+</details>
+
 </div>
 
 <div class="mob">
+
 <h2>🐑 ヒツジ</h2>
-<span class="tag">友好モブ</span>
-<p><strong>ドロップ:</strong> 羊毛</p>
-<p>ベッド作成に必須。</p>
+
+<span class="tag friendly">友好モブ</span>
+
+<p><strong>ドロップ:</strong>羊毛</p>
+
+<details>
+
+<summary>詳細を見る</summary>
+
+<p>
+ベッド作成に必須。
+</p>
+
+</details>
+
 </div>
 
 <div class="mob">
+
 <h2>🐷 ブタ</h2>
-<span class="tag">友好モブ</span>
-<p><strong>ドロップ:</strong> 豚肉</p>
-<p>食料として活躍。</p>
+
+<span class="tag friendly">友好モブ</span>
+
+<p><strong>ドロップ:</strong>豚肉</p>
+
+<details>
+
+<summary>詳細を見る</summary>
+
+<p>
+序盤の食料源として便利。
+</p>
+
+</details>
+
+</div>
+
+<div class="mob">
+
+<h2>🐔 ニワトリ</h2>
+
+<span class="tag friendly">友好モブ</span>
+
+<p><strong>ドロップ:</strong>鶏肉・羽</p>
+
+<details>
+
+<summary>詳細を見る</summary>
+
+<p>
+矢の素材となる羽を入手できる。
+</p>
+
+</details>
+
+</div>
+
+<div class="mob">
+
+<h2>🏘️ 村人</h2>
+
+<span class="tag friendly">友好モブ</span>
+
+<p><strong>役割:</strong>取引</p>
+
+<details>
+
+<summary>詳細を見る</summary>
+
+<p>
+エメラルドを使った取引が可能。
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+<h2 class="section-title" id="boss">
+👑 ボスモブ
+</h2>
+
+<div class="grid">
+
+<div class="mob">
+
+<h2>🐉 エンダードラゴン</h2>
+
+<span class="tag boss">ボス</span>
+
+<p><strong>体力:</strong>200</p>
+
+<p><strong>危険度:</strong>★★★★★</p>
+
+<details>
+
+<summary>詳細を見る</summary>
+
+<p>
+Minecraftのラスボス。
+討伐後にエリトラ探索が可能。
+</p>
+
+</details>
+
+</div>
+
+<div class="mob">
+
+<h2>☠️ ウィザー</h2>
+
+<span class="tag boss">ボス</span>
+
+<p><strong>体力:</strong>300</p>
+
+<p><strong>危険度:</strong>★★★★★</p>
+
+<details>
+
+<summary>詳細を見る</summary>
+
+<p>
+ネザースターをドロップする強敵。
+</p>
+
+</details>
+
+</div>
+
+<div class="mob">
+
+<h2>🕳️ ウォーデン</h2>
+
+<span class="tag boss">ボス級</span>
+
+<p><strong>体力:</strong>500</p>
+
+<p><strong>危険度:</strong>★★★★★</p>
+
+<details>
+
+<summary>詳細を見る</summary>
+
+<p>
+古代都市に出現する最恐クラスのモブ。
+</p>
+
+</details>
+
+</div>
+
 </div>
 
 </div>
@@ -122,8 +615,38 @@ footer{
 </div>
 
 <footer>
-© Minecraft攻略ベース
+
+© 2026 Minecraft攻略ベース
+
 </footer>
+
+<script>
+
+function searchMob(){
+
+let input =
+document.getElementById("search")
+.value.toLowerCase();
+
+let mobs =
+document.querySelectorAll(".mob");
+
+mobs.forEach(function(mob){
+
+if(
+mob.innerText.toLowerCase()
+.includes(input)
+){
+mob.style.display="block";
+}else{
+mob.style.display="none";
+}
+
+});
+
+}
+
+</script>
 
 </body>
 </html>
