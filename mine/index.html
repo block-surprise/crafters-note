@@ -5,8 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Minecraft攻略ベース</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0GD81F1VCB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-0GD81F1VCB');
+</script>
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -14,7 +23,7 @@
 }
 
 body{
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
     background:#f5f5f5;
     color:#333;
     line-height:1.6;
@@ -47,11 +56,11 @@ nav a{
     color:white;
     text-decoration:none;
     padding:15px 20px;
-    transition:0.3s;
+    transition:.3s;
 }
 
 nav a:hover{
-    background:rgba(255,255,255,0.15);
+    background:rgba(255,255,255,.15);
 }
 
 .hero{
@@ -60,8 +69,8 @@ nav a:hover{
 }
 
 .hero h2{
-    margin-bottom:15px;
     font-size:2rem;
+    margin-bottom:15px;
 }
 
 .container{
@@ -77,12 +86,19 @@ nav a:hover{
     margin-bottom:50px;
 }
 
+.card-link{
+    text-decoration:none;
+    color:inherit;
+    display:block;
+}
+
 .card{
     background:white;
     padding:25px;
     border-radius:15px;
-    box-shadow:0 3px 12px rgba(0,0,0,0.1);
-    transition:0.3s;
+    box-shadow:0 3px 12px rgba(0,0,0,.1);
+    transition:.3s;
+    height:100%;
 }
 
 .card:hover{
@@ -99,12 +115,12 @@ nav a:hover{
     padding:30px;
     border-radius:15px;
     margin-bottom:50px;
-    box-shadow:0 3px 12px rgba(0,0,0,0.1);
+    box-shadow:0 3px 12px rgba(0,0,0,.1);
 }
 
 .news h2{
-    margin-bottom:20px;
     color:#2e7d32;
+    margin-bottom:20px;
 }
 
 .news ul{
@@ -116,90 +132,208 @@ nav a:hover{
     border-bottom:1px solid #ddd;
 }
 
+.news li:last-child{
+    border-bottom:none;
+}
+
 footer{
     background:#222;
     color:white;
     text-align:center;
     padding:25px;
 }
+
+@media(max-width:768px){
+
+header h1{
+    font-size:2.2rem;
+}
+
+.hero h2{
+    font-size:1.6rem;
+}
+
+}
+
 </style>
 </head>
+
 <body>
 
 <header>
-    <h1>⛏ Minecraft攻略ベース</h1>
-    <p>初心者から上級者まで使えるマイクラ情報サイト</p>
+
+<h1>⛏️ Minecraft攻略ベース</h1>
+
+<p>初心者から上級者まで使えるマイクラ情報サイト</p>
+
 </header>
 
 <nav>
-    <a href="https://crafters.blocksurprise.f5.si/mine/">ホーム</a>
-    <a href="https://crafters.blocksurprise.f5.si/mine/">初心者ガイド</a>
-    <a href="https://crafters.blocksurprise.f5.si/mine/">エンチャント</a>
-    <a href="https://crafters.blocksurprise.f5.si/mine/">モブ図鑑</a>
-    <a href="https://crafters.blocksurprise.f5.si/mine/">建築アイデア</a>
-    <a href="https://crafters.blocksurprise.f5.si/mine/tools/">便利ツール</a>
+
+<a href="index.html">🏠 ホーム</a>
+<a href="beginner.html">🌱 初心者ガイド</a>
+<a href="enchant.html">⚔️ エンチャント</a>
+<a href="mobs.html">👾 モブ図鑑</a>
+<a href="builds.html">🏗️ 建築アイデア</a>
+<a href="tools.html">🧰 便利ツール</a>
+
 </nav>
 
 <section class="hero">
-    <h2>マイクラをもっと楽しもう！</h2>
-    <p>攻略・建築・アップデート情報をわかりやすく解説</p>
+
+<h2>マイクラをもっと楽しもう！</h2>
+
+<p>
+攻略・建築・モブ・エンチャント・便利ツールまで、
+Minecraftの情報をわかりやすくまとめています。
+</p>
+
 </section>
 
 <div class="container">
 
-    <div class="grid">
+<div class="grid">
 
 <a href="beginner.html" class="card-link">
+
 <div class="card">
-    <h3>🌱 初心者ガイド</h3>
-    <p>サバイバルの始め方からダイヤ集めまで解説。</p>
+
+<h3>🌱 初心者ガイド</h3>
+
+<p>
+サバイバルの始め方からダイヤモンド入手まで解説。
+</p>
+
 </div>
+
 </a>
 
-        <div class="card">
-            <h3>⚔ エンチャント一覧</h3>
-            <p>全エンチャントの効果やおすすめ構成を紹介。</p>
-        </div>
+<a href="enchant.html" class="card-link">
+
+<div class="card">
+
+<h3>⚔️ エンチャント一覧</h3>
+
+<p>
+全エンチャントの効果やおすすめ構成を紹介。
+</p>
+
+</div>
+
+</a>
 
 <a href="mobs.html" class="card-link">
+
 <div class="card">
-    <h3>👾 モブ図鑑</h3>
-    <p>敵モブ・動物モブの特徴をまとめています。</p>
+
+<h3>👾 モブ図鑑</h3>
+
+<p>
+敵モブ・友好モブ・ボスモブの特徴を掲載。
+</p>
+
 </div>
+
 </a>
 
 <a href="builds.html" class="card-link">
+
 <div class="card">
-    <h3>🏗️ 建築アイデア集</h3>
-    <p>初心者向けの家からおしゃれな街づくりまで紹介。</p>
+
+<h3>🏗️ 建築アイデア集</h3>
+
+<p>
+初心者向けの家から巨大建築まで紹介。
+</p>
+
 </div>
+
 </a>
 
-        <div class="card">
-            <h3>💎 鉱石ガイド</h3>
-            <p>ダイヤやネザライトの効率的な集め方。</p>
-        </div>
+<a href="ores.html" class="card-link">
 
-        <div class="card">
-            <h3>🧮 便利ツール</h3>
-            <p>ネザー座標変換など便利な機能を追加予定。</p>
-        </div>
+<div class="card">
 
-    </div>
+<h3>💎 鉱石ガイド</h3>
 
-    <section class="news">
-        <h2>最新情報</h2>
-        <ul>
-            <li>2026/05/22 サイト公開！</li>
-            <li>エンチャント一覧ページを準備中</li>
-            <li>ネザー座標変換ツールを開発予定</li>
-        </ul>
-    </section>
+<p>
+鉱石の入手方法や使い道を詳しく解説。
+</p>
+
+</div>
+
+</a>
+
+<a href="tools.html" class="card-link">
+
+<div class="card">
+
+<h3>🧰 便利ツール</h3>
+
+<p>
+経験値計算・村人職業一覧・採掘早見表など。
+</p>
+
+</div>
+
+</a>
+
+</div>
+
+<section class="news">
+
+<h2>📢 最新情報</h2>
+
+<ul>
+
+<li>2026/05/22 Minecraft攻略ベース公開</li>
+
+<li>📚 エンチャント完全ガイド公開</li>
+
+<li>💎 鉱石ガイド公開</li>
+
+<li>👾 モブ図鑑公開</li>
+
+<li>🏗️ 建築アイデア集公開</li>
+
+<li>🧰 便利ツール集公開</li>
+
+<li>🏘️ 村人職業一覧追加</li>
+
+<li>⛏️ 採掘早見表追加</li>
+
+</ul>
+
+</section>
+
+<section class="news">
+
+<h2>⭐ 人気コンテンツ</h2>
+
+<ul>
+
+<li><a href="diamond-guide.html">💎 ダイヤモンド完全ガイド</a></li>
+
+<li><a href="villager-guide.html">🏘️ 村人完全ガイド</a></li>
+
+<li><a href="charged-creeper-guide.html">⚡ 帯電クリーパー完全ガイド</a></li>
+
+<li><a href="mending-guide.html">📖 修繕完全ガイド</a></li>
+
+<li><a href="xp-calculator.html">🧮 経験値計算ツール</a></li>
+
+</ul>
+
+</section>
 
 </div>
 
 <footer>
-    © 2026 Minecraft攻略ベース
+
+<p>© 2026 Minecraft攻略ベース</p>
+
+<p>初心者から上級者まで役立つMinecraft情報サイト</p>
+
 </footer>
 
 </body>
