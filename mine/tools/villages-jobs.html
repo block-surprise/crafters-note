@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>村人職業一覧 | Minecraft攻略ベース</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0GD81F1VCB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0GD81F1VCB');
+</script>
+<style>
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f5f5;
+}
+
+header{
+background:#ff9800;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+.navbar{
+background:#ef6c00;
+text-align:center;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+padding:15px;
+display:inline-block;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:30px auto;
+}
+
+.search{
+background:white;
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.search input{
+width:100%;
+padding:12px;
+font-size:16px;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.card h2{
+margin-top:0;
+color:#ef6c00;
+}
+
+.rank{
+font-weight:bold;
+font-size:18px;
+}
+
+.s{
+color:#4caf50;
+}
+
+.a{
+color:#2196f3;
+}
+
+.b{
+color:#ff9800;
+}
+
+footer{
+background:#ef6c00;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:30px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>🏘️ 村人職業一覧</h1>
+
+<p>Minecraft攻略ベース</p>
+
+</header>
+
+<nav class="navbar">
+
+<a href="index.html">🏠 ホーム</a>
+<a href="tools.html">🧰 便利ツール</a>
+
+</nav>
+
+<div class="container">
+
+<div class="search">
+
+<input
+type="text"
+id="search"
+placeholder="職業名で検索..."
+onkeyup="searchJobs()">
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h2>📚 司書</h2>
+<p>職業ブロック：書見台</p>
+<p>主な取引：</p>
+<ul>
+<li>修繕</li>
+<li>シルクタッチ</li>
+<li>幸運Ⅲ</li>
+<li>耐久力Ⅲ</li>
+</ul>
+<p class="rank s">おすすめ度：S</p>
+</div>
+
+<div class="card">
+<h2>⚒️ 道具鍛冶</h2>
+<p>職業ブロック：鍛冶台</p>
+<ul>
+<li>ダイヤツール</li>
+<li>鐘</li>
+<li>エンチャント道具</li>
+</ul>
+<p class="rank a">おすすめ度：A</p>
+</div>
+
+<div class="card">
+<h2>🛡️ 防具鍛冶</h2>
+<p>職業ブロック：溶鉱炉</p>
+<ul>
+<li>ダイヤ防具</li>
+<li>エンチャント防具</li>
+</ul>
+<p class="rank a">おすすめ度：A</p>
+</div>
+
+<div class="card">
+<h2>⚔️ 武器鍛冶</h2>
+<p>職業ブロック：砥石</p>
+<ul>
+<li>ダイヤ武器</li>
+<li>エンチャント武器</li>
+</ul>
+<p class="rank a">おすすめ度：A</p>
+</div>
+
+<div class="card">
+<h2>🌾 農民</h2>
+<p>職業ブロック：コンポスター</p>
+<ul>
+<li>作物売却</li>
+<li>エメラルド集め</li>
+</ul>
+<p class="rank s">おすすめ度：S</p>
+</div>
+
+<div class="card">
+<h2>🍖 肉屋</h2>
+<p>職業ブロック：燻製器</p>
+<ul>
+<li>肉関連取引</li>
+</ul>
+<p class="rank b">おすすめ度：B</p>
+</div>
+
+<div class="card">
+<h2>🎣 釣り人</h2>
+<p>職業ブロック：樽</p>
+<ul>
+<li>糸</li>
+<li>魚</li>
+<li>焚き火</li>
+</ul>
+<p class="rank b">おすすめ度：B</p>
+</div>
+
+<div class="card">
+<h2>🗺️ 製図家</h2>
+<p>職業ブロック：製図台</p>
+<ul>
+<li>海洋探検家の地図</li>
+<li>森の洋館の地図</li>
+</ul>
+<p class="rank a">おすすめ度：A</p>
+</div>
+
+<div class="card">
+<h2>💎 石工</h2>
+<p>職業ブロック：石切台</p>
+<ul>
+<li>石材売却</li>
+<li>建築ブロック</li>
+</ul>
+<p class="rank a">おすすめ度：A</p>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 Minecraft攻略ベース
+
+</footer>
+
+<script>
+
+function searchJobs(){
+
+let input =
+document.getElementById("search")
+.value.toLowerCase();
+
+let cards =
+document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+if(card.innerText
+.toLowerCase()
+.includes(input)){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
