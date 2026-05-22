@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>サバイバル進捗チェッカー | Minecraft攻略ベース</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
+}
+
+header{
+    background:#388e3c;
+    color:white;
+    text-align:center;
+    padding:40px;
+}
+
+.navbar{
+    background:#2e7d32;
+    text-align:center;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    display:inline-block;
+    padding:15px;
+}
+
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:30px auto;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    margin-bottom:20px;
+}
+
+.progress-bar{
+    width:100%;
+    height:30px;
+    background:#ddd;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:15px;
+}
+
+.progress{
+    height:100%;
+    width:0%;
+    background:#4caf50;
+    text-align:center;
+    color:white;
+    line-height:30px;
+    font-weight:bold;
+}
+
+.task{
+    padding:10px 0;
+    border-bottom:1px solid #eee;
+}
+
+.task label{
+    font-size:18px;
+}
+
+button{
+    background:#388e3c;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#2e7d32;
+}
+
+footer{
+    background:#2e7d32;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>📊 サバイバル進捗チェッカー</h1>
+
+<p>Minecraft攻略ベース</p>
+
+</header>
+
+<nav class="navbar">
+
+<a href="index.html">🏠 ホーム</a>
+<a href="tools.html">🧰 便利ツール集</a>
+
+</nav>
+
+<div class="container">
+
+<div class="card">
+
+<h2>進捗率</h2>
+
+<div class="progress-bar">
+
+<div class="progress" id="progressBar">
+
+0%
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>🌱 序盤</h2>
+
+<div class="task"><label><input type="checkbox" class="check"> 木材を入手</label></div>
+<div class="task"><label><input type="checkbox" class="check"> 石ツール作成</label></div>
+<div class="task"><label><input type="checkbox" class="check"> ベッド作成</label></div>
+<div class="task"><label><input type="checkbox" class="check"> 鉄装備作成</label></div>
+
+</div>
+
+<div class="card">
+
+<h2>🔥 中盤</h2>
+
+<div class="task"><label><input type="checkbox" class="check"> ダイヤ発見</label></div>
+<div class="task"><label><input type="checkbox" class="check"> エンチャント台作成</label></div>
+<div class="task"><label><input type="checkbox" class="check"> ネザー到達</label></div>
+<div class="task"><label><input type="checkbox" class="check"> ブレイズロッド入手</label></div>
+
+</div>
+
+<div class="card">
+
+<h2>🐉 終盤</h2>
+
+<div class="task"><label><input type="checkbox" class="check"> 要塞発見</label></div>
+<div class="task"><label><input type="checkbox" class="check"> エンド到達</label></div>
+<div class="task"><label><input type="checkbox" class="check"> エンダードラゴン討伐</label></div>
+<div class="task"><label><input type="checkbox" class="check"> エリトラ入手</label></div>
+
+</div>
+
+<div class="card">
+
+<h2>🏆 やり込み</h2>
+
+<div class="task"><label><input type="checkbox" class="check"> ネザライト一式</label></div>
+<div class="task"><label><input type="checkbox" class="check"> ウィザー討伐</label></div>
+<div class="task"><label><input type="checkbox" class="check"> ビーコン作成</label></div>
+<div class="task"><label><input type="checkbox" class="check"> 全実績達成を目指す</label></div>
+
+</div>
+
+<div class="card">
+
+<button onclick="resetProgress()">
+
+進捗をリセット
+
+</button>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 Minecraft攻略ベース
+
+</footer>
+
+<script>
+
+const checks =
+document.querySelectorAll(".check");
+
+function updateProgress(){
+
+let checked = 0;
+
+checks.forEach(box=>{
+
+if(box.checked){
+checked++;
+}
+
+});
+
+let percent =
+Math.round((checked/checks.length)*100);
+
+let bar =
+document.getElementById("progressBar");
+
+bar.style.width =
+percent + "%";
+
+bar.innerHTML =
+percent + "%";
+
+localStorage.setItem(
+"mc_progress",
+JSON.stringify(
+[...checks].map(c=>c.checked)
+)
+);
+
+}
+
+checks.forEach((box,index)=>{
+
+box.addEventListener(
+"change",
+updateProgress
+);
+
+});
+
+window.onload=function(){
+
+let saved =
+JSON.parse(
+localStorage.getItem(
+"mc_progress"
+)
+);
+
+if(saved){
+
+checks.forEach((box,index)=>{
+
+box.checked =
+saved[index];
+
+});
+
+}
+
+updateProgress();
+
+};
+
+function resetProgress(){
+
+localStorage.removeItem(
+"mc_progress"
+);
+
+checks.forEach(box=>{
+
+box.checked=false;
+
+});
+
+updateProgress();
+
+}
+
+</script>
+
+</body>
+</html>
